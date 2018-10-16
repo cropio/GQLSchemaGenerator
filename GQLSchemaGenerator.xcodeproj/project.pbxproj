@@ -1,0 +1,895 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"GQLSchemaGenerator::GQLSchemaGeneratorPackageTests::ProductTarget" /* GQLSchemaGeneratorPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_79 /* Build configuration list for PBXAggregateTarget "GQLSchemaGeneratorPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_82 /* PBXTargetDependency */,
+			);
+			name = GQLSchemaGeneratorPackageTests;
+			productName = GQLSchemaGeneratorPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		15552EC221763C4B00305CF1 /* Containable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EB321763C4B00305CF1 /* Containable.swift */; };
+		15552EC321763C4B00305CF1 /* Swift.Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EB421763C4B00305CF1 /* Swift.Container.swift */; };
+		15552EC421763C4B00305CF1 /* StringRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EB521763C4B00305CF1 /* StringRepresentable.swift */; };
+		15552EC521763C4B00305CF1 /* Swift.Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EB621763C4B00305CF1 /* Swift.Import.swift */; };
+		15552EC621763C4B00305CF1 /* Containing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EB721763C4B00305CF1 /* Containing.swift */; };
+		15552EC721763C4B00305CF1 /* Swift.Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EB821763C4B00305CF1 /* Swift.Class.swift */; };
+		15552EC821763C4B00305CF1 /* Swift.Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EB921763C4B00305CF1 /* Swift.Generator.swift */; };
+		15552EC921763C4B00305CF1 /* Swift.Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EBA21763C4B00305CF1 /* Swift.Visibility.swift */; };
+		15552ECA21763C4B00305CF1 /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EBB21763C4B00305CF1 /* Swift.swift */; };
+		15552ECB21763C4B00305CF1 /* Swift.Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EBC21763C4B00305CF1 /* Swift.Method.swift */; };
+		15552ECC21763C4B00305CF1 /* Swift.Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EBD21763C4B00305CF1 /* Swift.Property.swift */; };
+		15552ECD21763C4B00305CF1 /* Swift.EnumCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EBE21763C4B00305CF1 /* Swift.EnumCase.swift */; };
+		15552ECE21763C4B00305CF1 /* Swift.Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EBF21763C4B00305CF1 /* Swift.Annotation.swift */; };
+		15552ECF21763C4B00305CF1 /* Swift.Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EC021763C4B00305CF1 /* Swift.Alias.swift */; };
+		15552ED021763C4B00305CF1 /* Swift.Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EC121763C4B00305CF1 /* Swift.Line.swift */; };
+		15552ED321763C8C00305CF1 /* IntrospectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552ED221763C8B00305CF1 /* IntrospectionCoordinator.swift */; };
+		15552ED721763DC300305CF1 /* ConfigurationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552ED521763DC300305CF1 /* ConfigurationCoordinator.swift */; };
+		15552ED821763DC300305CF1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552ED621763DC300305CF1 /* Configuration.swift */; };
+		15552EE421763EB100305CF1 /* Swift.PropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EDA21763EB100305CF1 /* Swift.PropertyTests.swift */; };
+		15552EE521763EB100305CF1 /* Swift.VisibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EDB21763EB100305CF1 /* Swift.VisibilityTests.swift */; };
+		15552EE621763EB100305CF1 /* Swift.AliasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EDC21763EB100305CF1 /* Swift.AliasTests.swift */; };
+		15552EE721763EB100305CF1 /* Swift.EnumCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EDD21763EB100305CF1 /* Swift.EnumCaseTests.swift */; };
+		15552EE821763EB100305CF1 /* ContainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EDE21763EB100305CF1 /* ContainingTests.swift */; };
+		15552EE921763EB100305CF1 /* Swift.AnnotationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EDF21763EB100305CF1 /* Swift.AnnotationTests.swift */; };
+		15552EEA21763EB100305CF1 /* Swift.ClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EE021763EB100305CF1 /* Swift.ClassTests.swift */; };
+		15552EEB21763EB100305CF1 /* Swift.ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EE121763EB100305CF1 /* Swift.ContainerTests.swift */; };
+		15552EEC21763EB100305CF1 /* Swift.MethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EE221763EB100305CF1 /* Swift.MethodTests.swift */; };
+		15552EED21763EB100305CF1 /* Swift.LinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EE321763EB100305CF1 /* Swift.LinesTests.swift */; };
+		15552EF021763F3E00305CF1 /* String+Newline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EEF21763F3E00305CF1 /* String+Newline.swift */; };
+		15552EF42176403000305CF1 /* String+CaseConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EF22176403000305CF1 /* String+CaseConversionTests.swift */; };
+		15552EF52176403000305CF1 /* Collection+AppendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EF32176403000305CF1 /* Collection+AppendTests.swift */; };
+		15552EF92176409600305CF1 /* JsonCreatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EF72176409600305CF1 /* JsonCreatableTests.swift */; };
+		15552EFD2176414E00305CF1 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EFC2176414E00305CF1 /* ConfigurationTests.swift */; };
+		15552EFF217641C900305CF1 /* Swift.ImportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552EFE217641C900305CF1 /* Swift.ImportTests.swift */; };
+		15552F152176460900305CF1 /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552F122176446700305CF1 /* Executable.swift */; };
+		15552F162176462C00305CF1 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15552F112176446700305CF1 /* Arguments.swift */; };
+		OBJ_48 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* main.swift */; };
+		OBJ_50 /* GQLSchemaGeneratorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "GQLSchemaGenerator::GQLSchemaGeneratorCore::Product" /* GQLSchemaGeneratorCore.framework */; };
+		OBJ_57 /* Collection+Append.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Collection+Append.swift */; };
+		OBJ_58 /* JsonCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* JsonCreatable.swift */; };
+		OBJ_59 /* String+CaseConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* String+CaseConversion.swift */; };
+		OBJ_60 /* Describeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Describeable.swift */; };
+		OBJ_61 /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Nameable.swift */; };
+		OBJ_62 /* Typeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Typeable.swift */; };
+		OBJ_63 /* __Schema.__Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* __Schema.__Argument.swift */; };
+		OBJ_64 /* __Schema.__EnumValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* __Schema.__EnumValue.swift */; };
+		OBJ_65 /* __Schema.__Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* __Schema.__Field.swift */; };
+		OBJ_66 /* __Schema.__InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* __Schema.__InputField.swift */; };
+		OBJ_67 /* __Schema.__Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* __Schema.__Kind.swift */; };
+		OBJ_68 /* __Schema.__Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* __Schema.__Object.swift */; };
+		OBJ_69 /* __Schema.__ObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* __Schema.__ObjectType.swift */; };
+		OBJ_70 /* __Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* __Schema.swift */; };
+		OBJ_77 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_89 /* Schema.ArgumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Schema.ArgumentTests.swift */; };
+		OBJ_90 /* Schema.EnumValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Schema.EnumValueTests.swift */; };
+		OBJ_91 /* Schema.FieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Schema.FieldTests.swift */; };
+		OBJ_92 /* Schema.InputFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* Schema.InputFieldTests.swift */; };
+		OBJ_93 /* Schema.KindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* Schema.KindTests.swift */; };
+		OBJ_94 /* Schema.ObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Schema.ObjectTests.swift */; };
+		OBJ_95 /* Schema.ObjectTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* Schema.ObjectTypeTests.swift */; };
+		OBJ_96 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* XCTestManifests.swift */; };
+		OBJ_98 /* GQLSchemaGeneratorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "GQLSchemaGenerator::GQLSchemaGeneratorCore::Product" /* GQLSchemaGeneratorCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15552EAF21763AD200305CF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "GQLSchemaGenerator::GQLSchemaGeneratorCore";
+			remoteInfo = GQLSchemaGeneratorCore;
+		};
+		15552EB021763AD200305CF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "GQLSchemaGenerator::GQLSchemaGeneratorCore";
+			remoteInfo = GQLSchemaGeneratorCore;
+		};
+		15552EB121763AD300305CF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "GQLSchemaGenerator::GQLSchemaGeneratorTests";
+			remoteInfo = GQLSchemaGeneratorTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15552EB321763C4B00305CF1 /* Containable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Containable.swift; sourceTree = "<group>"; };
+		15552EB421763C4B00305CF1 /* Swift.Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Container.swift; sourceTree = "<group>"; };
+		15552EB521763C4B00305CF1 /* StringRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringRepresentable.swift; sourceTree = "<group>"; };
+		15552EB621763C4B00305CF1 /* Swift.Import.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Import.swift; sourceTree = "<group>"; };
+		15552EB721763C4B00305CF1 /* Containing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Containing.swift; sourceTree = "<group>"; };
+		15552EB821763C4B00305CF1 /* Swift.Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Class.swift; sourceTree = "<group>"; };
+		15552EB921763C4B00305CF1 /* Swift.Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Generator.swift; sourceTree = "<group>"; };
+		15552EBA21763C4B00305CF1 /* Swift.Visibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Visibility.swift; sourceTree = "<group>"; };
+		15552EBB21763C4B00305CF1 /* Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.swift; sourceTree = "<group>"; };
+		15552EBC21763C4B00305CF1 /* Swift.Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Method.swift; sourceTree = "<group>"; };
+		15552EBD21763C4B00305CF1 /* Swift.Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Property.swift; sourceTree = "<group>"; };
+		15552EBE21763C4B00305CF1 /* Swift.EnumCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.EnumCase.swift; sourceTree = "<group>"; };
+		15552EBF21763C4B00305CF1 /* Swift.Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Annotation.swift; sourceTree = "<group>"; };
+		15552EC021763C4B00305CF1 /* Swift.Alias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Alias.swift; sourceTree = "<group>"; };
+		15552EC121763C4B00305CF1 /* Swift.Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.Line.swift; sourceTree = "<group>"; };
+		15552ED221763C8B00305CF1 /* IntrospectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntrospectionCoordinator.swift; sourceTree = "<group>"; };
+		15552ED521763DC300305CF1 /* ConfigurationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationCoordinator.swift; sourceTree = "<group>"; };
+		15552ED621763DC300305CF1 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		15552EDA21763EB100305CF1 /* Swift.PropertyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.PropertyTests.swift; sourceTree = "<group>"; };
+		15552EDB21763EB100305CF1 /* Swift.VisibilityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.VisibilityTests.swift; sourceTree = "<group>"; };
+		15552EDC21763EB100305CF1 /* Swift.AliasTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.AliasTests.swift; sourceTree = "<group>"; };
+		15552EDD21763EB100305CF1 /* Swift.EnumCaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.EnumCaseTests.swift; sourceTree = "<group>"; };
+		15552EDE21763EB100305CF1 /* ContainingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainingTests.swift; sourceTree = "<group>"; };
+		15552EDF21763EB100305CF1 /* Swift.AnnotationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.AnnotationTests.swift; sourceTree = "<group>"; };
+		15552EE021763EB100305CF1 /* Swift.ClassTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.ClassTests.swift; sourceTree = "<group>"; };
+		15552EE121763EB100305CF1 /* Swift.ContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.ContainerTests.swift; sourceTree = "<group>"; };
+		15552EE221763EB100305CF1 /* Swift.MethodTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.MethodTests.swift; sourceTree = "<group>"; };
+		15552EE321763EB100305CF1 /* Swift.LinesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift.LinesTests.swift; sourceTree = "<group>"; };
+		15552EEF21763F3E00305CF1 /* String+Newline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Newline.swift"; sourceTree = "<group>"; };
+		15552EF22176403000305CF1 /* String+CaseConversionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CaseConversionTests.swift"; sourceTree = "<group>"; };
+		15552EF32176403000305CF1 /* Collection+AppendTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+AppendTests.swift"; sourceTree = "<group>"; };
+		15552EF72176409600305CF1 /* JsonCreatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonCreatableTests.swift; sourceTree = "<group>"; };
+		15552EF82176409600305CF1 /* GraphQLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLTests.swift; sourceTree = "<group>"; };
+		15552EFC2176414E00305CF1 /* ConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
+		15552EFE217641C900305CF1 /* Swift.ImportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift.ImportTests.swift; sourceTree = "<group>"; };
+		15552F112176446700305CF1 /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
+		15552F122176446700305CF1 /* Executable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
+		"GQLSchemaGenerator::GQLSchemaGenerator::Product" /* GQLSchemaGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = GQLSchemaGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		"GQLSchemaGenerator::GQLSchemaGeneratorCore::Product" /* GQLSchemaGeneratorCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GQLSchemaGeneratorCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"GQLSchemaGenerator::GQLSchemaGeneratorTests::Product" /* GQLSchemaGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = GQLSchemaGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* Collection+Append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Append.swift"; sourceTree = "<group>"; };
+		OBJ_11 /* JsonCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonCreatable.swift; sourceTree = "<group>"; };
+		OBJ_12 /* String+CaseConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CaseConversion.swift"; sourceTree = "<group>"; };
+		OBJ_14 /* Describeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Describeable.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Nameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
+		OBJ_16 /* Typeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typeable.swift; sourceTree = "<group>"; };
+		OBJ_17 /* __Schema.__Argument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Schema.__Argument.swift; sourceTree = "<group>"; };
+		OBJ_18 /* __Schema.__EnumValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Schema.__EnumValue.swift; sourceTree = "<group>"; };
+		OBJ_19 /* __Schema.__Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Schema.__Field.swift; sourceTree = "<group>"; };
+		OBJ_20 /* __Schema.__InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Schema.__InputField.swift; sourceTree = "<group>"; };
+		OBJ_21 /* __Schema.__Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Schema.__Kind.swift; sourceTree = "<group>"; };
+		OBJ_22 /* __Schema.__Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Schema.__Object.swift; sourceTree = "<group>"; };
+		OBJ_23 /* __Schema.__ObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Schema.__ObjectType.swift; sourceTree = "<group>"; };
+		OBJ_24 /* __Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __Schema.swift; sourceTree = "<group>"; };
+		OBJ_26 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		OBJ_31 /* Schema.ArgumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.ArgumentTests.swift; sourceTree = "<group>"; };
+		OBJ_32 /* Schema.EnumValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.EnumValueTests.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Schema.FieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.FieldTests.swift; sourceTree = "<group>"; };
+		OBJ_34 /* Schema.InputFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.InputFieldTests.swift; sourceTree = "<group>"; };
+		OBJ_35 /* Schema.KindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.KindTests.swift; sourceTree = "<group>"; };
+		OBJ_36 /* Schema.ObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.ObjectTests.swift; sourceTree = "<group>"; };
+		OBJ_37 /* Schema.ObjectTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.ObjectTypeTests.swift; sourceTree = "<group>"; };
+		OBJ_38 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_50 /* GQLSchemaGeneratorCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_98 /* GQLSchemaGeneratorCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15552EB221763C4B00305CF1 /* Code Generation */ = {
+			isa = PBXGroup;
+			children = (
+				15552EB321763C4B00305CF1 /* Containable.swift */,
+				15552EB421763C4B00305CF1 /* Swift.Container.swift */,
+				15552EB521763C4B00305CF1 /* StringRepresentable.swift */,
+				15552EB621763C4B00305CF1 /* Swift.Import.swift */,
+				15552EB721763C4B00305CF1 /* Containing.swift */,
+				15552EB821763C4B00305CF1 /* Swift.Class.swift */,
+				15552EB921763C4B00305CF1 /* Swift.Generator.swift */,
+				15552EBA21763C4B00305CF1 /* Swift.Visibility.swift */,
+				15552EBB21763C4B00305CF1 /* Swift.swift */,
+				15552EBC21763C4B00305CF1 /* Swift.Method.swift */,
+				15552EBD21763C4B00305CF1 /* Swift.Property.swift */,
+				15552EBE21763C4B00305CF1 /* Swift.EnumCase.swift */,
+				15552EBF21763C4B00305CF1 /* Swift.Annotation.swift */,
+				15552EC021763C4B00305CF1 /* Swift.Alias.swift */,
+				15552EC121763C4B00305CF1 /* Swift.Line.swift */,
+			);
+			path = "Code Generation";
+			sourceTree = "<group>";
+		};
+		15552ED121763C8B00305CF1 /* Introspection */ = {
+			isa = PBXGroup;
+			children = (
+				15552ED221763C8B00305CF1 /* IntrospectionCoordinator.swift */,
+			);
+			path = Introspection;
+			sourceTree = "<group>";
+		};
+		15552ED421763DC300305CF1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				15552ED521763DC300305CF1 /* ConfigurationCoordinator.swift */,
+				15552ED621763DC300305CF1 /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		15552ED921763E8B00305CF1 /* Code Generation */ = {
+			isa = PBXGroup;
+			children = (
+				15552EDE21763EB100305CF1 /* ContainingTests.swift */,
+				15552EDC21763EB100305CF1 /* Swift.AliasTests.swift */,
+				15552EDF21763EB100305CF1 /* Swift.AnnotationTests.swift */,
+				15552EE021763EB100305CF1 /* Swift.ClassTests.swift */,
+				15552EE121763EB100305CF1 /* Swift.ContainerTests.swift */,
+				15552EDD21763EB100305CF1 /* Swift.EnumCaseTests.swift */,
+				15552EE321763EB100305CF1 /* Swift.LinesTests.swift */,
+				15552EE221763EB100305CF1 /* Swift.MethodTests.swift */,
+				15552EDA21763EB100305CF1 /* Swift.PropertyTests.swift */,
+				15552EDB21763EB100305CF1 /* Swift.VisibilityTests.swift */,
+				15552EFE217641C900305CF1 /* Swift.ImportTests.swift */,
+			);
+			path = "Code Generation";
+			sourceTree = "<group>";
+		};
+		15552EEE21763F2900305CF1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				15552EEF21763F3E00305CF1 /* String+Newline.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		15552EF12176401400305CF1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15552EF32176403000305CF1 /* Collection+AppendTests.swift */,
+				15552EF22176403000305CF1 /* String+CaseConversionTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		15552EF62176408100305CF1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				15552EF82176409600305CF1 /* GraphQLTests.swift */,
+				15552EF72176409600305CF1 /* JsonCreatableTests.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		15552EFB2176413200305CF1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				15552EFC2176414E00305CF1 /* ConfigurationTests.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		OBJ_13 /* Schema */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* Describeable.swift */,
+				OBJ_15 /* Nameable.swift */,
+				OBJ_16 /* Typeable.swift */,
+				OBJ_24 /* __Schema.swift */,
+				OBJ_17 /* __Schema.__Argument.swift */,
+				OBJ_18 /* __Schema.__EnumValue.swift */,
+				OBJ_19 /* __Schema.__Field.swift */,
+				OBJ_20 /* __Schema.__InputField.swift */,
+				OBJ_21 /* __Schema.__Kind.swift */,
+				OBJ_22 /* __Schema.__Object.swift */,
+				OBJ_23 /* __Schema.__ObjectType.swift */,
+			);
+			path = Schema;
+			sourceTree = "<group>";
+		};
+		OBJ_25 /* GQLSchemaGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_26 /* main.swift */,
+			);
+			name = GQLSchemaGenerator;
+			path = Sources/GQLSchemaGenerator;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_27 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_28 /* GQLSchemaGeneratorTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_28 /* GQLSchemaGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				15552EFB2176413200305CF1 /* Configuration */,
+				15552EF62176408100305CF1 /* Shared */,
+				15552EF12176401400305CF1 /* Extensions */,
+				15552EEE21763F2900305CF1 /* Utilities */,
+				15552ED921763E8B00305CF1 /* Code Generation */,
+				OBJ_30 /* Schema */,
+				OBJ_38 /* XCTestManifests.swift */,
+			);
+			name = GQLSchemaGeneratorTests;
+			path = Tests/GQLSchemaGeneratorTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_30 /* Schema */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_31 /* Schema.ArgumentTests.swift */,
+				OBJ_32 /* Schema.EnumValueTests.swift */,
+				OBJ_33 /* Schema.FieldTests.swift */,
+				OBJ_34 /* Schema.InputFieldTests.swift */,
+				OBJ_35 /* Schema.KindTests.swift */,
+				OBJ_36 /* Schema.ObjectTests.swift */,
+				OBJ_37 /* Schema.ObjectTypeTests.swift */,
+			);
+			path = Schema;
+			sourceTree = "<group>";
+		};
+		OBJ_39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"GQLSchemaGenerator::GQLSchemaGeneratorTests::Product" /* GQLSchemaGeneratorTests.xctest */,
+				"GQLSchemaGenerator::GQLSchemaGenerator::Product" /* GQLSchemaGenerator */,
+				"GQLSchemaGenerator::GQLSchemaGeneratorCore::Product" /* GQLSchemaGeneratorCore.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_27 /* Tests */,
+				OBJ_39 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* GQLSchemaGeneratorCore */,
+				OBJ_25 /* GQLSchemaGenerator */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* GQLSchemaGeneratorCore */ = {
+			isa = PBXGroup;
+			children = (
+				15552F112176446700305CF1 /* Arguments.swift */,
+				15552F122176446700305CF1 /* Executable.swift */,
+				15552ED421763DC300305CF1 /* Configuration */,
+				15552ED121763C8B00305CF1 /* Introspection */,
+				15552EB221763C4B00305CF1 /* Code Generation */,
+				OBJ_9 /* Extensions */,
+				OBJ_13 /* Schema */,
+			);
+			name = GQLSchemaGeneratorCore;
+			path = Sources/GQLSchemaGeneratorCore;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_10 /* Collection+Append.swift */,
+				OBJ_11 /* JsonCreatable.swift */,
+				OBJ_12 /* String+CaseConversion.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"GQLSchemaGenerator::GQLSchemaGenerator" /* GQLSchemaGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_44 /* Build configuration list for PBXNativeTarget "GQLSchemaGenerator" */;
+			buildPhases = (
+				OBJ_47 /* Sources */,
+				OBJ_49 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_51 /* PBXTargetDependency */,
+			);
+			name = GQLSchemaGenerator;
+			productName = GQLSchemaGenerator;
+			productReference = "GQLSchemaGenerator::GQLSchemaGenerator::Product" /* GQLSchemaGenerator */;
+			productType = "com.apple.product-type.tool";
+		};
+		"GQLSchemaGenerator::GQLSchemaGeneratorCore" /* GQLSchemaGeneratorCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_53 /* Build configuration list for PBXNativeTarget "GQLSchemaGeneratorCore" */;
+			buildPhases = (
+				OBJ_56 /* Sources */,
+				OBJ_71 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GQLSchemaGeneratorCore;
+			productName = GQLSchemaGeneratorCore;
+			productReference = "GQLSchemaGenerator::GQLSchemaGeneratorCore::Product" /* GQLSchemaGeneratorCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"GQLSchemaGenerator::GQLSchemaGeneratorTests" /* GQLSchemaGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_84 /* Build configuration list for PBXNativeTarget "GQLSchemaGeneratorTests" */;
+			buildPhases = (
+				OBJ_87 /* Sources */,
+				OBJ_97 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_99 /* PBXTargetDependency */,
+			);
+			name = GQLSchemaGeneratorTests;
+			productName = GQLSchemaGeneratorTests;
+			productReference = "GQLSchemaGenerator::GQLSchemaGeneratorTests::Product" /* GQLSchemaGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"GQLSchemaGenerator::SwiftPMPackageDescription" /* GQLSchemaGeneratorPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_73 /* Build configuration list for PBXNativeTarget "GQLSchemaGeneratorPackageDescription" */;
+			buildPhases = (
+				OBJ_76 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GQLSchemaGeneratorPackageDescription;
+			productName = GQLSchemaGeneratorPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "GQLSchemaGenerator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"GQLSchemaGenerator::GQLSchemaGenerator" /* GQLSchemaGenerator */,
+				"GQLSchemaGenerator::GQLSchemaGeneratorCore" /* GQLSchemaGeneratorCore */,
+				"GQLSchemaGenerator::SwiftPMPackageDescription" /* GQLSchemaGeneratorPackageDescription */,
+				"GQLSchemaGenerator::GQLSchemaGeneratorPackageTests::ProductTarget" /* GQLSchemaGeneratorPackageTests */,
+				"GQLSchemaGenerator::GQLSchemaGeneratorTests" /* GQLSchemaGeneratorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_48 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_57 /* Collection+Append.swift in Sources */,
+				OBJ_58 /* JsonCreatable.swift in Sources */,
+				OBJ_59 /* String+CaseConversion.swift in Sources */,
+				OBJ_62 /* Typeable.swift in Sources */,
+				OBJ_61 /* Nameable.swift in Sources */,
+				OBJ_60 /* Describeable.swift in Sources */,
+				15552ED821763DC300305CF1 /* Configuration.swift in Sources */,
+				OBJ_70 /* __Schema.swift in Sources */,
+				OBJ_63 /* __Schema.__Argument.swift in Sources */,
+				OBJ_64 /* __Schema.__EnumValue.swift in Sources */,
+				OBJ_65 /* __Schema.__Field.swift in Sources */,
+				15552F152176460900305CF1 /* Executable.swift in Sources */,
+				OBJ_66 /* __Schema.__InputField.swift in Sources */,
+				OBJ_67 /* __Schema.__Kind.swift in Sources */,
+				OBJ_68 /* __Schema.__Object.swift in Sources */,
+				OBJ_69 /* __Schema.__ObjectType.swift in Sources */,
+				15552EC621763C4B00305CF1 /* Containing.swift in Sources */,
+				15552ED321763C8C00305CF1 /* IntrospectionCoordinator.swift in Sources */,
+				15552F162176462C00305CF1 /* Arguments.swift in Sources */,
+				15552EC321763C4B00305CF1 /* Swift.Container.swift in Sources */,
+				15552ECB21763C4B00305CF1 /* Swift.Method.swift in Sources */,
+				15552EC521763C4B00305CF1 /* Swift.Import.swift in Sources */,
+				15552EC721763C4B00305CF1 /* Swift.Class.swift in Sources */,
+				15552ECE21763C4B00305CF1 /* Swift.Annotation.swift in Sources */,
+				15552ED721763DC300305CF1 /* ConfigurationCoordinator.swift in Sources */,
+				15552ECA21763C4B00305CF1 /* Swift.swift in Sources */,
+				15552EC221763C4B00305CF1 /* Containable.swift in Sources */,
+				15552ED021763C4B00305CF1 /* Swift.Line.swift in Sources */,
+				15552ECC21763C4B00305CF1 /* Swift.Property.swift in Sources */,
+				15552EC921763C4B00305CF1 /* Swift.Visibility.swift in Sources */,
+				15552EC421763C4B00305CF1 /* StringRepresentable.swift in Sources */,
+				15552ECD21763C4B00305CF1 /* Swift.EnumCase.swift in Sources */,
+				15552ECF21763C4B00305CF1 /* Swift.Alias.swift in Sources */,
+				15552EC821763C4B00305CF1 /* Swift.Generator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_77 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				15552EE721763EB100305CF1 /* Swift.EnumCaseTests.swift in Sources */,
+				15552EF92176409600305CF1 /* JsonCreatableTests.swift in Sources */,
+				15552EF52176403000305CF1 /* Collection+AppendTests.swift in Sources */,
+				15552EE821763EB100305CF1 /* ContainingTests.swift in Sources */,
+				15552EE921763EB100305CF1 /* Swift.AnnotationTests.swift in Sources */,
+				OBJ_89 /* Schema.ArgumentTests.swift in Sources */,
+				15552EEA21763EB100305CF1 /* Swift.ClassTests.swift in Sources */,
+				15552EEB21763EB100305CF1 /* Swift.ContainerTests.swift in Sources */,
+				OBJ_90 /* Schema.EnumValueTests.swift in Sources */,
+				OBJ_91 /* Schema.FieldTests.swift in Sources */,
+				15552EED21763EB100305CF1 /* Swift.LinesTests.swift in Sources */,
+				15552EF42176403000305CF1 /* String+CaseConversionTests.swift in Sources */,
+				OBJ_92 /* Schema.InputFieldTests.swift in Sources */,
+				15552EFD2176414E00305CF1 /* ConfigurationTests.swift in Sources */,
+				15552EE621763EB100305CF1 /* Swift.AliasTests.swift in Sources */,
+				OBJ_93 /* Schema.KindTests.swift in Sources */,
+				OBJ_94 /* Schema.ObjectTests.swift in Sources */,
+				OBJ_95 /* Schema.ObjectTypeTests.swift in Sources */,
+				15552EF021763F3E00305CF1 /* String+Newline.swift in Sources */,
+				OBJ_96 /* XCTestManifests.swift in Sources */,
+				15552EEC21763EB100305CF1 /* Swift.MethodTests.swift in Sources */,
+				15552EE421763EB100305CF1 /* Swift.PropertyTests.swift in Sources */,
+				15552EFF217641C900305CF1 /* Swift.ImportTests.swift in Sources */,
+				15552EE521763EB100305CF1 /* Swift.VisibilityTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "GQLSchemaGenerator::GQLSchemaGeneratorCore" /* GQLSchemaGeneratorCore */;
+			targetProxy = 15552EAF21763AD200305CF1 /* PBXContainerItemProxy */;
+		};
+		OBJ_82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "GQLSchemaGenerator::GQLSchemaGeneratorTests" /* GQLSchemaGeneratorTests */;
+			targetProxy = 15552EB121763AD300305CF1 /* PBXContainerItemProxy */;
+		};
+		OBJ_99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "GQLSchemaGenerator::GQLSchemaGeneratorCore" /* GQLSchemaGeneratorCore */;
+			targetProxy = 15552EB021763AD200305CF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GQLSchemaGenerator.xcodeproj/GQLSchemaGenerator_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = GQLSchemaGenerator;
+			};
+			name = Debug;
+		};
+		OBJ_46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GQLSchemaGenerator.xcodeproj/GQLSchemaGenerator_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = GQLSchemaGenerator;
+			};
+			name = Release;
+		};
+		OBJ_54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GQLSchemaGenerator.xcodeproj/GQLSchemaGeneratorCore_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = GQLSchemaGeneratorCore;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = GQLSchemaGeneratorCore;
+			};
+			name = Debug;
+		};
+		OBJ_55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GQLSchemaGenerator.xcodeproj/GQLSchemaGeneratorCore_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = GQLSchemaGeneratorCore;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = GQLSchemaGeneratorCore;
+			};
+			name = Release;
+		};
+		OBJ_74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		OBJ_75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		OBJ_80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+			};
+			name = Release;
+		};
+		OBJ_85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GQLSchemaGenerator.xcodeproj/GQLSchemaGeneratorTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = GQLSchemaGeneratorTests;
+			};
+			name = Debug;
+		};
+		OBJ_86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = GQLSchemaGenerator.xcodeproj/GQLSchemaGeneratorTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = GQLSchemaGeneratorTests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_2 /* Build configuration list for PBXProject "GQLSchemaGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_44 /* Build configuration list for PBXNativeTarget "GQLSchemaGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_45 /* Debug */,
+				OBJ_46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_53 /* Build configuration list for PBXNativeTarget "GQLSchemaGeneratorCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_54 /* Debug */,
+				OBJ_55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_73 /* Build configuration list for PBXNativeTarget "GQLSchemaGeneratorPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_74 /* Debug */,
+				OBJ_75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_79 /* Build configuration list for PBXAggregateTarget "GQLSchemaGeneratorPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_80 /* Debug */,
+				OBJ_81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_84 /* Build configuration list for PBXNativeTarget "GQLSchemaGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_85 /* Debug */,
+				OBJ_86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

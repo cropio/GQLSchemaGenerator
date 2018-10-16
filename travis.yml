@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode10
+script: xcodebuild test -scheme GQLSchemaGenerator -enableCodeCoverage YES
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t 352eb8f2-b80e-4e71-9744-464b5a1963b6
