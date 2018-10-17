@@ -17,12 +17,16 @@ case $i in
 esac
 done
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
 find_generator() {
-    GENERATOR_PATH="$(eval find ../build/ -type f -name "GQLSchemaGenerator")"
+  echo $DIR
+    GENERATOR_PATH="$(eval find ${DIR}/../build -type f -name "GQLSchemaGenerator")"
     if [ -z "$GENERATOR_PATH" ]; then
-        ./build.sh
+        ${DIR}/build.sh
         find_generator
     fi
+
 }
 
 find_generator

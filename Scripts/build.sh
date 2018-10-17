@@ -1,13 +1,15 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
 # remove build folder
-rm -rf ../build
+rm -rf ${DIR}/../build
 
 #runing build
-xcodebuild -project ../GQLSchemaGenerator.xcodeproj -quiet
+xcodebuild -project ${DIR}/../GQLSchemaGenerator.xcodeproj -quiet
 
 #file path
-GENERATOR_PATH="$(eval find ../build/ -type f -name "GQLSchemaGenerator")"
+GENERATOR_PATH="$(eval find ${DIR}/../build/ -type f -name "GQLSchemaGenerator")"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
