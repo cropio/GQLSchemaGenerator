@@ -165,10 +165,10 @@ extension Swift {
                      */
                     
                     if let queryType = queryType, queryType.name == type.name {
-                        rootQueriesFile.container += self.generate(object: type, rootType: "query")
+                        rootQueriesFile.container += self.generate(object: type, rootType: "GraphQLQuery")
                         
                     } else if let mutationType = mutationType, mutationType.name == type.name {
-                        rootQueriesFile.container += self.generate(object: type, rootType: "mutation")
+                        rootQueriesFile.container += self.generate(object: type, rootType: "GraphQLMutation")
                     } else {
                         queriesFile.container += self.generate(object: type, rootType: nil)
                         fragmentsFile.container += self.genereteFragment(objectModel: type)
@@ -1100,7 +1100,7 @@ extension Swift {
             return Method(
                 visibility:  isInterface ? .none : .public,
                 name:        .function(rootType != nil ? .static : .none, field.name),
-                returnType:  isInterface ? "Self" : rootType != nil ? "GraphQLQuery" : type,
+                returnType:  isInterface ? "Self" : rootType ?? type,
                 parameters:  parameters,
                 annotations: annotations,
                 body:        body,
@@ -1208,7 +1208,11 @@ extension Swift {
                 lines += Line(content: "")
             }
             if let rootType = rootType {
-                lines += Line(content: "return GraphQLQuery(queryType: .\(rootType), body: field._graphQLFormat, fragmentBody: \(fragment ? "fragment.description" : "nil"))")
+                if fragment {
+                    lines += Line(content: "return \(rootType)(body: field._graphQLFormat, fragment: fragment)")
+                } else {
+                    lines += Line(content: "return \(rootType)(body: field._graphQLFormat)")
+                }
             } else {
                 lines += Line(content: "return self")
             }

@@ -142,7 +142,6 @@
 		15552EF22176403000305CF1 /* String+CaseConversionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CaseConversionTests.swift"; sourceTree = "<group>"; };
 		15552EF32176403000305CF1 /* Collection+AppendTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+AppendTests.swift"; sourceTree = "<group>"; };
 		15552EF72176409600305CF1 /* JsonCreatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonCreatableTests.swift; sourceTree = "<group>"; };
-		15552EF82176409600305CF1 /* GraphQLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLTests.swift; sourceTree = "<group>"; };
 		15552EFC2176414E00305CF1 /* ConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 		15552EFE217641C900305CF1 /* Swift.ImportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift.ImportTests.swift; sourceTree = "<group>"; };
 		15552F112176446700305CF1 /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
@@ -280,7 +279,6 @@
 		15552EF62176408100305CF1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				15552EF82176409600305CF1 /* GraphQLTests.swift */,
 				15552EF72176409600305CF1 /* JsonCreatableTests.swift */,
 			);
 			path = Shared;
