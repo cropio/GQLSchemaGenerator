@@ -127,14 +127,16 @@ extension Swift {
             let mutationType   = TypeName(name: (jsonSchema[SchemaKey.mutationType] as? JSON)?["name"] as? String)
             
             let foundationModule = Swift.Import(module: "Foundation")
-            let aliasesFile = File(kind: .aliases, container: Container(children: foundationModule))
-            let enumsFile   = File(kind: .enums,   container: Container(children: foundationModule))
-            let rootQueriesFile = File(kind: .rootQueries, container: Container(children: foundationModule))
-            let queriesFile = File(kind: .queries, container: Container(children: foundationModule))
+            let schemaModule = Swift.Import(module: "GQLSchema")
+
+            let aliasesFile = File(kind: .aliases, container: Container(children: foundationModule, schemaModule))
+            let enumsFile   = File(kind: .enums,   container: Container(children: foundationModule, schemaModule))
+            let rootQueriesFile = File(kind: .rootQueries, container: Container(children: foundationModule, schemaModule))
+            let queriesFile = File(kind: .queries, container: Container(children: foundationModule, schemaModule))
 //            let modelsFile  = File(kind: .models,  container: Container(children: foundationModule))
-            let inputsFile  = File(kind: .inputs,  container: Container(children: foundationModule))
+            let inputsFile  = File(kind: .inputs,  container: Container(children: foundationModule, schemaModule))
 //            let networkFile = File(kind: .network, container: Container(children: foundationModule))
-            let fragmentsFile = File(kind: .fragments, container: Container(children: foundationModule))
+            let fragmentsFile = File(kind: .fragments, container: Container(children: foundationModule, schemaModule))
 
             
             /* -----------------------------
