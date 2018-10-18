@@ -23,8 +23,8 @@ public class Executable {
     // ----------------------------------
     //  MARK: - Execution -
     //
-    private func findConfigurationURL() throws -> URL {
-        guard let rootPath = args.rootPath, !rootPath.isEmpty else {
+    private func findConfigurationURL(rootPath: String? = nil) throws -> URL {
+        guard let rootPath = args.rootPath ?? rootPath, !rootPath.isEmpty else {
             print("A path to the root directory is required.")
             exit(1)
         }
@@ -42,14 +42,13 @@ public class Executable {
         return Configuration(json: json)
     }
     
-    public func execute() {
+    public func execute(rootPath: String? = nil, destinationPath: String? = nil) {
         
         let start = CFAbsoluteTimeGetCurrent()
         defer {
             print("Generation time: \(CFAbsoluteTimeGetCurrent() - start) sec")
         }
-        
-        guard let destinationPath = args.destinationPath, !destinationPath.isEmpty else {
+        guard let destinationPath = args.destinationPath ?? destinationPath, !destinationPath.isEmpty else {
             print("A destination path for the generated files directory is required.")
             exit(1)
         }
@@ -57,7 +56,7 @@ public class Executable {
         let destinationURL = URL(fileURLWithPath: destinationPath)
         
         do {
-            let configURL = try self.findConfigurationURL()
+            let configURL = try self.findConfigurationURL(rootPath: rootPath)
             print("Using configuration at: \(configURL.absoluteString)")
             
             /* ------------------------------------

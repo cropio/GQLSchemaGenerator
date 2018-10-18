@@ -1,6 +1,6 @@
 {
   "schema": {
-    "file": "starwars.json"
+    "path": "starwars.json"
   },
   "scalars": [
   ]
