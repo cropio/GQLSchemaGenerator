@@ -6,7 +6,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 rm -rf ${DIR}/../build
 
 #runing build
-xcodebuild -project ${DIR}/../GQLSchemaGenerator.xcodeproj -scheme GQLSchemaGenerator | xcpretty
+xcodebuild -project ${DIR}/../GQLSchemaGenerator.xcodeproj -scheme GQLSchemaGenerator -derivedDataPath ${DIR}/../build | xcpretty
 
 #file path
 GENERATOR_PATH="$(eval find ${DIR}/../build/ -type f -name "GQLSchemaGenerator")"
