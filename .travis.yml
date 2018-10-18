@@ -2,6 +2,7 @@ language: objective-c
 osx_image: xcode10
 script:
   - swift package update
+  - swift package generate-xcodeproj
   - set -o pipefail && xcodebuild test -enableCodeCoverage YES -scheme GQLSchemaGenerator ONLY_ACTIVE_ARCH=NO | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t 352eb8f2-b80e-4e71-9744-464b5a1963b6
