@@ -702,7 +702,7 @@ extension Swift {
             let swiftClass = Class(
                 visibility:   .public,
                 kind:         .class(.final),
-                name:         object.modelTypeName + "Fragment",
+                name:         object.queryTypeName + "Fragment",
                 inheritances: ["GraphQLFragment"],
                 comments:     object.descriptionComments()
             )
@@ -1057,7 +1057,9 @@ extension Swift {
              ** Build the parameters based on arguments
              ** accepted by this field.
              */
-            var parameters = field.parameters(isInterface: isInterface)
+            var parameters = [Method.Parameter(alias: "alias", name: "_alias", type: "String?", default: .nil)]
+            
+            parameters += field.parameters(isInterface: isInterface)
             
             /* ----------------------------------------
              ** We append the `buildOn` closure only if
@@ -1075,7 +1077,7 @@ extension Swift {
                     type:  closure.type
                 )
             } else if fragment && buildable == false {
-                parameters += Method.Parameter(name: "fragment", type: field.type.leaf.modelTypeName + "Fragment")
+                parameters += Method.Parameter(name: "fragment", type: field.type.leaf.queryTypeName + "Fragment")
             }
             
             var body: [Line] = []
@@ -1195,7 +1197,11 @@ extension Swift {
                 objectType = self.fieldClassName()
             }
             
-            lines += Line(content: "let field = \(objectType)(name: \"\(name)\", parameters: \(paramVariable))")
+            if buildable {
+                lines += Line(content: "let field = \(objectType)(name: \"\(name)\", alias: _alias, parameters: \(paramVariable))")
+            } else {
+                lines += Line(content: "let field = \(objectType)(name: \"\(name)\", parameters: \(paramVariable))")
+            }
             if rootType == nil {
                 lines += Line(content: "try! self._add(child: field)")
                 lines += Line(content: "")
@@ -1211,9 +1217,9 @@ extension Swift {
             }
             if let rootType = rootType {
                 if fragment {
-                    lines += Line(content: "return \(rootType)(body: field._graphQLFormat, fragment: fragment)")
+                    lines += Line(content: "return \(rootType)(field: field, fragment: fragment)")
                 } else {
-                    lines += Line(content: "return \(rootType)(body: field._graphQLFormat)")
+                    lines += Line(content: "return \(rootType)(field: field)")
                 }
             } else {
                 lines += Line(content: "return self")

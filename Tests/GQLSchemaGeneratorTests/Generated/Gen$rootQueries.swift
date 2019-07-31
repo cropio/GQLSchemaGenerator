@@ -13,7 +13,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allFilms(episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GraphQLQuery {
+    public static func allFilms(alias _alias: String? = nil, episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = episodeId_Gt { parameters.append(GraphQLParameter(name: "episodeId_Gt", value: arg)) }
@@ -22,10 +22,10 @@ public final class GQLQuery {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLFilmConnection(name: "allFilms", parameters: parameters)
+        let field = GQLFilmConnection(name: "allFilms", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// No documentation available for `allFilms`
@@ -37,7 +37,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allFilms(episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: FilmConnectionFragment) -> GraphQLQuery {
+    public static func allFilms(alias _alias: String? = nil, episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: GQLFilmConnectionFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = episodeId_Gt { parameters.append(GraphQLParameter(name: "episodeId_Gt", value: arg)) }
@@ -49,7 +49,7 @@ public final class GQLQuery {
         let field = GQLFilmConnection(name: "allFilms", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// No documentation available for `allSpecies`
@@ -60,7 +60,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allSpecies(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GraphQLQuery {
+    public static func allSpecies(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -68,10 +68,10 @@ public final class GQLQuery {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLSpecieConnection(name: "allSpecies", parameters: parameters)
+        let field = GQLSpecieConnection(name: "allSpecies", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// No documentation available for `allSpecies`
@@ -82,7 +82,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allSpecies(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: SpecieConnectionFragment) -> GraphQLQuery {
+    public static func allSpecies(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: GQLSpecieConnectionFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -93,7 +93,7 @@ public final class GQLQuery {
         let field = GQLSpecieConnection(name: "allSpecies", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// No documentation available for `allCharacters`
@@ -105,7 +105,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allCharacters(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GraphQLQuery {
+    public static func allCharacters(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -114,10 +114,10 @@ public final class GQLQuery {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLPersonConnection(name: "allCharacters", parameters: parameters)
+        let field = GQLPersonConnection(name: "allCharacters", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// No documentation available for `allCharacters`
@@ -129,7 +129,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allCharacters(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: PersonConnectionFragment) -> GraphQLQuery {
+    public static func allCharacters(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: GQLPersonConnectionFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -141,7 +141,7 @@ public final class GQLQuery {
         let field = GQLPersonConnection(name: "allCharacters", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// No documentation available for `allVehicles`
@@ -153,7 +153,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allVehicles(name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLVehicleConnection) -> Void) -> GraphQLQuery {
+    public static func allVehicles(alias _alias: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLVehicleConnection) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name_Startswith { parameters.append(GraphQLParameter(name: "name_Startswith", value: arg)) }
@@ -162,10 +162,10 @@ public final class GQLQuery {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLVehicleConnection(name: "allVehicles", parameters: parameters)
+        let field = GQLVehicleConnection(name: "allVehicles", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// No documentation available for `allVehicles`
@@ -177,7 +177,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allVehicles(name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: VehicleConnectionFragment) -> GraphQLQuery {
+    public static func allVehicles(alias _alias: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: GQLVehicleConnectionFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name_Startswith { parameters.append(GraphQLParameter(name: "name_Startswith", value: arg)) }
@@ -189,7 +189,7 @@ public final class GQLQuery {
         let field = GQLVehicleConnection(name: "allVehicles", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// No documentation available for `allPlanets`
@@ -201,7 +201,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allPlanets(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPlanetConnection) -> Void) -> GraphQLQuery {
+    public static func allPlanets(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPlanetConnection) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -210,10 +210,10 @@ public final class GQLQuery {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLPlanetConnection(name: "allPlanets", parameters: parameters)
+        let field = GQLPlanetConnection(name: "allPlanets", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// No documentation available for `allPlanets`
@@ -225,7 +225,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allPlanets(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: PlanetConnectionFragment) -> GraphQLQuery {
+    public static func allPlanets(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: GQLPlanetConnectionFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -237,7 +237,7 @@ public final class GQLQuery {
         let field = GQLPlanetConnection(name: "allPlanets", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// No documentation available for `allStarships`
@@ -248,7 +248,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allStarships(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLStarshipConnection) -> Void) -> GraphQLQuery {
+    public static func allStarships(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLStarshipConnection) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -256,10 +256,10 @@ public final class GQLQuery {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLStarshipConnection(name: "allStarships", parameters: parameters)
+        let field = GQLStarshipConnection(name: "allStarships", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// No documentation available for `allStarships`
@@ -270,7 +270,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allStarships(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: StarshipConnectionFragment) -> GraphQLQuery {
+    public static func allStarships(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: GQLStarshipConnectionFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -281,7 +281,7 @@ public final class GQLQuery {
         let field = GQLStarshipConnection(name: "allStarships", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// No documentation available for `allHeroes`
@@ -294,7 +294,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allHeroes(name_Contains: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLHeroConnection) -> Void) -> GraphQLQuery {
+    public static func allHeroes(alias _alias: String? = nil, name_Contains: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLHeroConnection) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name_Contains { parameters.append(GraphQLParameter(name: "name_Contains", value: arg)) }
@@ -304,10 +304,10 @@ public final class GQLQuery {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLHeroConnection(name: "allHeroes", parameters: parameters)
+        let field = GQLHeroConnection(name: "allHeroes", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// No documentation available for `allHeroes`
@@ -320,7 +320,7 @@ public final class GQLQuery {
     ///     - first: No documentation
     ///     - last: No documentation
     /// 
-    public static func allHeroes(name_Contains: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: HeroConnectionFragment) -> GraphQLQuery {
+    public static func allHeroes(alias _alias: String? = nil, name_Contains: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, fragment: GQLHeroConnectionFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name_Contains { parameters.append(GraphQLParameter(name: "name_Contains", value: arg)) }
@@ -333,7 +333,7 @@ public final class GQLQuery {
         let field = GQLHeroConnection(name: "allHeroes", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// The ID of the object
@@ -341,31 +341,31 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func film(id: ID, _ buildOn: (GQLFilm) -> Void) -> GraphQLQuery {
+    public static func film(alias _alias: String? = nil, id: ID, _ buildOn: (GQLFilm) -> Void) -> GraphQLQuery {
+        var parameters: [GraphQLParameter] = []
+        
+        parameters.append(GraphQLParameter(name: "id", value: id))
+        
+        let field = GQLFilm(name: "film", alias: _alias, parameters: parameters)
+        buildOn(field)
+        
+        return GraphQLQuery(field: field)
+    }
+
+    /// The ID of the object
+    /// 
+    /// - parameters:
+    ///     - id: No documentation
+    /// 
+    public static func film(alias _alias: String? = nil, id: ID, fragment: GQLFilmFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
         
         let field = GQLFilm(name: "film", parameters: parameters)
-        buildOn(field)
-        
-        return GraphQLQuery(body: field._graphQLFormat)
-    }
-
-    /// The ID of the object
-    /// 
-    /// - parameters:
-    ///     - id: No documentation
-    /// 
-    public static func film(id: ID, fragment: FilmFragment) -> GraphQLQuery {
-        var parameters: [GraphQLParameter] = []
-        
-        parameters.append(GraphQLParameter(name: "id", value: id))
-        
-        let field = GQLFilm(name: "film", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// The ID of the object
@@ -373,15 +373,15 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func specie(id: ID, _ buildOn: (GQLSpecie) -> Void) -> GraphQLQuery {
+    public static func specie(alias _alias: String? = nil, id: ID, _ buildOn: (GQLSpecie) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
         
-        let field = GQLSpecie(name: "specie", parameters: parameters)
+        let field = GQLSpecie(name: "specie", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// The ID of the object
@@ -389,7 +389,7 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func specie(id: ID, fragment: SpecieFragment) -> GraphQLQuery {
+    public static func specie(alias _alias: String? = nil, id: ID, fragment: GQLSpecieFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
@@ -397,7 +397,7 @@ public final class GQLQuery {
         let field = GQLSpecie(name: "specie", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// The ID of the object
@@ -405,31 +405,31 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func character(id: ID, _ buildOn: (GQLPerson) -> Void) -> GraphQLQuery {
+    public static func character(alias _alias: String? = nil, id: ID, _ buildOn: (GQLPerson) -> Void) -> GraphQLQuery {
+        var parameters: [GraphQLParameter] = []
+        
+        parameters.append(GraphQLParameter(name: "id", value: id))
+        
+        let field = GQLPerson(name: "character", alias: _alias, parameters: parameters)
+        buildOn(field)
+        
+        return GraphQLQuery(field: field)
+    }
+
+    /// The ID of the object
+    /// 
+    /// - parameters:
+    ///     - id: No documentation
+    /// 
+    public static func character(alias _alias: String? = nil, id: ID, fragment: GQLPersonFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
         
         let field = GQLPerson(name: "character", parameters: parameters)
-        buildOn(field)
-        
-        return GraphQLQuery(body: field._graphQLFormat)
-    }
-
-    /// The ID of the object
-    /// 
-    /// - parameters:
-    ///     - id: No documentation
-    /// 
-    public static func character(id: ID, fragment: PersonFragment) -> GraphQLQuery {
-        var parameters: [GraphQLParameter] = []
-        
-        parameters.append(GraphQLParameter(name: "id", value: id))
-        
-        let field = GQLPerson(name: "character", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// The ID of the object
@@ -437,15 +437,15 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func vehicle(id: ID, _ buildOn: (GQLVehicle) -> Void) -> GraphQLQuery {
+    public static func vehicle(alias _alias: String? = nil, id: ID, _ buildOn: (GQLVehicle) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
         
-        let field = GQLVehicle(name: "vehicle", parameters: parameters)
+        let field = GQLVehicle(name: "vehicle", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// The ID of the object
@@ -453,7 +453,7 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func vehicle(id: ID, fragment: VehicleFragment) -> GraphQLQuery {
+    public static func vehicle(alias _alias: String? = nil, id: ID, fragment: GQLVehicleFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
@@ -461,7 +461,7 @@ public final class GQLQuery {
         let field = GQLVehicle(name: "vehicle", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// The ID of the object
@@ -469,31 +469,31 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func planet(id: ID, _ buildOn: (GQLPlanet) -> Void) -> GraphQLQuery {
+    public static func planet(alias _alias: String? = nil, id: ID, _ buildOn: (GQLPlanet) -> Void) -> GraphQLQuery {
+        var parameters: [GraphQLParameter] = []
+        
+        parameters.append(GraphQLParameter(name: "id", value: id))
+        
+        let field = GQLPlanet(name: "planet", alias: _alias, parameters: parameters)
+        buildOn(field)
+        
+        return GraphQLQuery(field: field)
+    }
+
+    /// The ID of the object
+    /// 
+    /// - parameters:
+    ///     - id: No documentation
+    /// 
+    public static func planet(alias _alias: String? = nil, id: ID, fragment: GQLPlanetFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
         
         let field = GQLPlanet(name: "planet", parameters: parameters)
-        buildOn(field)
-        
-        return GraphQLQuery(body: field._graphQLFormat)
-    }
-
-    /// The ID of the object
-    /// 
-    /// - parameters:
-    ///     - id: No documentation
-    /// 
-    public static func planet(id: ID, fragment: PlanetFragment) -> GraphQLQuery {
-        var parameters: [GraphQLParameter] = []
-        
-        parameters.append(GraphQLParameter(name: "id", value: id))
-        
-        let field = GQLPlanet(name: "planet", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// The ID of the object
@@ -501,15 +501,15 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func starship(id: ID, _ buildOn: (GQLStarship) -> Void) -> GraphQLQuery {
+    public static func starship(alias _alias: String? = nil, id: ID, _ buildOn: (GQLStarship) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
         
-        let field = GQLStarship(name: "starship", parameters: parameters)
+        let field = GQLStarship(name: "starship", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// The ID of the object
@@ -517,7 +517,7 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func starship(id: ID, fragment: StarshipFragment) -> GraphQLQuery {
+    public static func starship(alias _alias: String? = nil, id: ID, fragment: GQLStarshipFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
@@ -525,7 +525,7 @@ public final class GQLQuery {
         let field = GQLStarship(name: "starship", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// The ID of the object
@@ -533,15 +533,15 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func hero(id: ID, _ buildOn: (GQLHero) -> Void) -> GraphQLQuery {
+    public static func hero(alias _alias: String? = nil, id: ID, _ buildOn: (GQLHero) -> Void) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
         
-        let field = GQLHero(name: "hero", parameters: parameters)
+        let field = GQLHero(name: "hero", alias: _alias, parameters: parameters)
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// The ID of the object
@@ -549,7 +549,7 @@ public final class GQLQuery {
     /// - parameters:
     ///     - id: No documentation
     /// 
-    public static func hero(id: ID, fragment: HeroFragment) -> GraphQLQuery {
+    public static func hero(alias _alias: String? = nil, id: ID, fragment: GQLHeroFragment) -> GraphQLQuery {
         var parameters: [GraphQLParameter] = []
         
         parameters.append(GraphQLParameter(name: "id", value: id))
@@ -557,41 +557,41 @@ public final class GQLQuery {
         let field = GQLHero(name: "hero", parameters: parameters)
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 
     /// No documentation available for `__debug`
-    public static func __debug(_ buildOn: (GQLDjangoDebug) -> Void) -> GraphQLQuery {
-        let field = GQLDjangoDebug(name: "__debug", parameters: [])
+    public static func __debug(alias _alias: String? = nil, _ buildOn: (GQLDjangoDebug) -> Void) -> GraphQLQuery {
+        let field = GQLDjangoDebug(name: "__debug", alias: _alias, parameters: [])
         buildOn(field)
         
-        return GraphQLQuery(body: field._graphQLFormat)
+        return GraphQLQuery(field: field)
     }
 
     /// No documentation available for `__debug`
-    public static func __debug(fragment: DjangoDebugFragment) -> GraphQLQuery {
+    public static func __debug(alias _alias: String? = nil, fragment: GQLDjangoDebugFragment) -> GraphQLQuery {
         let field = GQLDjangoDebug(name: "__debug", parameters: [])
         field.fragment(fragment)
         
-        return GraphQLQuery(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLQuery(field: field, fragment: fragment)
     }
 }
 
 public final class GQLMutation {
 
     /// No documentation available for `createHero`
-    public static func createHero(_ buildOn: (GQLCreateHeroPayload) -> Void) -> GraphQLMutation {
-        let field = GQLCreateHeroPayload(name: "createHero", parameters: [])
+    public static func createHero(alias _alias: String? = nil, _ buildOn: (GQLCreateHeroPayload) -> Void) -> GraphQLMutation {
+        let field = GQLCreateHeroPayload(name: "createHero", alias: _alias, parameters: [])
         buildOn(field)
         
-        return GraphQLMutation(body: field._graphQLFormat)
+        return GraphQLMutation(field: field)
     }
 
     /// No documentation available for `createHero`
-    public static func createHero(fragment: CreateHeroPayloadFragment) -> GraphQLMutation {
+    public static func createHero(alias _alias: String? = nil, fragment: GQLCreateHeroPayloadFragment) -> GraphQLMutation {
         let field = GQLCreateHeroPayload(name: "createHero", parameters: [])
         field.fragment(fragment)
         
-        return GraphQLMutation(body: field._graphQLFormat, fragment: fragment)
+        return GraphQLMutation(field: field, fragment: fragment)
     }
 }

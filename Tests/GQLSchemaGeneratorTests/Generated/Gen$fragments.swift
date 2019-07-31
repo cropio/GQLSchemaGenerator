@@ -3,7 +3,7 @@ import Foundation
 import GQLSchema
 
 /// A single transport craft that has hyperdrive capability.
-public final class StarshipFragment: GraphQLFragment {
+public final class GQLStarshipFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "Starship"
@@ -17,7 +17,7 @@ public final class StarshipFragment: GraphQLFragment {
     }
 }
 
-public final class FilmFragment: GraphQLFragment {
+public final class GQLFilmFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "Film"
@@ -31,7 +31,7 @@ public final class FilmFragment: GraphQLFragment {
     }
 }
 
-public final class FilmEdgeFragment: GraphQLFragment {
+public final class GQLFilmEdgeFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "FilmEdge"
@@ -45,7 +45,7 @@ public final class FilmEdgeFragment: GraphQLFragment {
     }
 }
 
-public final class PersonConnectionFragment: GraphQLFragment {
+public final class GQLPersonConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "PersonConnection"
@@ -59,7 +59,7 @@ public final class PersonConnectionFragment: GraphQLFragment {
     }
 }
 
-public final class PersonEdgeFragment: GraphQLFragment {
+public final class GQLPersonEdgeFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "PersonEdge"
@@ -74,7 +74,7 @@ public final class PersonEdgeFragment: GraphQLFragment {
 }
 
 /// An individual person or character within the Star Wars universe.
-public final class PersonFragment: GraphQLFragment {
+public final class GQLPersonFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "Person"
@@ -90,7 +90,7 @@ public final class PersonFragment: GraphQLFragment {
 
 /// A large mass, planet or planetoid in the Star Wars Universe,
 ///     at the time of 0 ABY.
-public final class PlanetFragment: GraphQLFragment {
+public final class GQLPlanetFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "Planet"
@@ -104,7 +104,7 @@ public final class PlanetFragment: GraphQLFragment {
     }
 }
 
-public final class PageInfoFragment: GraphQLFragment {
+public final class GQLPageInfoFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "PageInfo"
@@ -118,7 +118,7 @@ public final class PageInfoFragment: GraphQLFragment {
     }
 }
 
-public final class HeroConnectionFragment: GraphQLFragment {
+public final class GQLHeroConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "HeroConnection"
@@ -133,7 +133,7 @@ public final class HeroConnectionFragment: GraphQLFragment {
 }
 
 /// A hero created by fans
-public final class HeroFragment: GraphQLFragment {
+public final class GQLHeroFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "Hero"
@@ -147,7 +147,7 @@ public final class HeroFragment: GraphQLFragment {
     }
 }
 
-public final class HeroEdgeFragment: GraphQLFragment {
+public final class GQLHeroEdgeFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "HeroEdge"
@@ -162,7 +162,7 @@ public final class HeroEdgeFragment: GraphQLFragment {
 }
 
 /// A type of person or character within the Star Wars Universe.
-public final class SpecieFragment: GraphQLFragment {
+public final class GQLSpecieFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "Specie"
@@ -176,7 +176,7 @@ public final class SpecieFragment: GraphQLFragment {
     }
 }
 
-public final class SpecieConnectionFragment: GraphQLFragment {
+public final class GQLSpecieConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "SpecieConnection"
@@ -190,7 +190,7 @@ public final class SpecieConnectionFragment: GraphQLFragment {
     }
 }
 
-public final class StarshipEdgeFragment: GraphQLFragment {
+public final class GQLStarshipEdgeFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "StarshipEdge"
@@ -204,7 +204,7 @@ public final class StarshipEdgeFragment: GraphQLFragment {
     }
 }
 
-public final class SpecieEdgeFragment: GraphQLFragment {
+public final class GQLSpecieEdgeFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "SpecieEdge"
@@ -218,7 +218,7 @@ public final class SpecieEdgeFragment: GraphQLFragment {
     }
 }
 
-public final class VehicleConnectionFragment: GraphQLFragment {
+public final class GQLVehicleConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "VehicleConnection"
@@ -232,7 +232,7 @@ public final class VehicleConnectionFragment: GraphQLFragment {
     }
 }
 
-public final class VehicleEdgeFragment: GraphQLFragment {
+public final class GQLVehicleEdgeFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "VehicleEdge"
@@ -247,7 +247,7 @@ public final class VehicleEdgeFragment: GraphQLFragment {
 }
 
 /// A single transport craft that does not have hyperdrive capability
-public final class VehicleFragment: GraphQLFragment {
+public final class GQLVehicleFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "Vehicle"
@@ -261,7 +261,7 @@ public final class VehicleFragment: GraphQLFragment {
     }
 }
 
-public final class StarshipConnectionFragment: GraphQLFragment {
+public final class GQLStarshipConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "StarshipConnection"
@@ -275,7 +275,7 @@ public final class StarshipConnectionFragment: GraphQLFragment {
     }
 }
 
-public final class PlanetEdgeFragment: GraphQLFragment {
+public final class GQLPlanetEdgeFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "PlanetEdge"
@@ -289,7 +289,7 @@ public final class PlanetEdgeFragment: GraphQLFragment {
     }
 }
 
-public final class DjangoDebugFragment: GraphQLFragment {
+public final class GQLDjangoDebugFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "DjangoDebug"
@@ -303,7 +303,7 @@ public final class DjangoDebugFragment: GraphQLFragment {
     }
 }
 
-public final class DjangoDebugSQLFragment: GraphQLFragment {
+public final class GQLDjangoDebugSQLFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "DjangoDebugSQL"
@@ -317,7 +317,7 @@ public final class DjangoDebugSQLFragment: GraphQLFragment {
     }
 }
 
-public final class CreateHeroPayloadFragment: GraphQLFragment {
+public final class GQLCreateHeroPayloadFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "CreateHeroPayload"
@@ -331,7 +331,7 @@ public final class CreateHeroPayloadFragment: GraphQLFragment {
     }
 }
 
-public final class FilmConnectionFragment: GraphQLFragment {
+public final class GQLFilmConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "FilmConnection"
@@ -345,7 +345,7 @@ public final class FilmConnectionFragment: GraphQLFragment {
     }
 }
 
-public final class PlanetConnectionFragment: GraphQLFragment {
+public final class GQLPlanetConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
         return "PlanetConnection"

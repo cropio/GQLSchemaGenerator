@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "GQLSchemaGenerator",
     dependencies: [
-        .package(url: "https://github.com/Lumyk/GQLSchema.git", from: "1.0.0"),
+        .package(url: "https://github.com/Lumyk/GQLSchema.git", from: "1.1.1"),
     ],
     targets: [
         .target(
