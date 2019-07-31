@@ -18,7 +18,7 @@ class TestFragments: XCTestCase {
     }
 
     func testStarshipFragment() {
-        let fragment = StarshipFragment { _ = $0
+        let fragment = GQLStarshipFragment { _ = $0
             .cargoCapacity
             .consumables
             .costInCredits
@@ -41,7 +41,7 @@ class TestFragments: XCTestCase {
     }
     
     func testFilmFragment() {
-        let fragment = FilmFragment { _ = $0
+        let fragment = GQLFilmFragment { _ = $0
             .director
             .episodeId
             .id
@@ -55,7 +55,7 @@ class TestFragments: XCTestCase {
     }
 
     func testFilmEdgeFragment() {
-        let fragment = FilmEdgeFragment { _ = $0
+        let fragment = GQLFilmEdgeFragment { _ = $0
             .cursor
             .node { _ = $0
                 .director
@@ -72,7 +72,7 @@ class TestFragments: XCTestCase {
     }
     
     func testPersonConnectionFragment() {
-        let fragment = PersonConnectionFragment { _ = $0
+        let fragment = GQLPersonConnectionFragment { _ = $0
             .totalCount
             .edges { _ = $0
                 .cursor
@@ -100,7 +100,7 @@ class TestFragments: XCTestCase {
     }
     
     func testPersonEdgeFragment() {
-        let fragment = PersonEdgeFragment { _ = $0
+        let fragment = GQLPersonEdgeFragment { _ = $0
             .cursor
             .node {_ = $0
                 .birthYear
@@ -119,7 +119,7 @@ class TestFragments: XCTestCase {
     }
     
     func testPersonFragment() {
-        let fragment = PersonFragment { _ = $0
+        let fragment = GQLPersonFragment { _ = $0
             .birthYear
             .eyeColor
             .gender
@@ -135,7 +135,7 @@ class TestFragments: XCTestCase {
     }
     
     func testPlanetFragment() {
-        let fragment = PlanetFragment { _ = $0
+        let fragment = GQLPlanetFragment { _ = $0
             .climates
             .diameter
             .gravity
@@ -152,7 +152,7 @@ class TestFragments: XCTestCase {
     }
     
     func testPageInfoFragment() {
-        let fragment = PageInfoFragment { _ = $0
+        let fragment = GQLPageInfoFragment { _ = $0
             .endCursor
             .hasNextPage
             .hasPreviousPage
@@ -163,7 +163,7 @@ class TestFragments: XCTestCase {
     }
     
     func testHeroConnectionFragment() {
-        let fragment = HeroConnectionFragment { _ = $0
+        let fragment = GQLHeroConnectionFragment { _ = $0
             .totalCount
             .edges { _ = $0
                 .cursor
@@ -184,7 +184,7 @@ class TestFragments: XCTestCase {
     }
     
     func testHeroFragment() {
-        let fragment = HeroFragment { _ = $0
+        let fragment = GQLHeroFragment { _ = $0
             .id
             .name
             .homeworld { _ = $0
@@ -205,7 +205,7 @@ class TestFragments: XCTestCase {
     }
     
     func testHeroEdgeFragment() {
-        let fragment = HeroEdgeFragment { _ = $0
+        let fragment = GQLHeroEdgeFragment { _ = $0
             .cursor
             .node { _ = $0
                 .id
@@ -217,7 +217,7 @@ class TestFragments: XCTestCase {
     }
     
     func testSpecieFragment() {
-        let fragment = SpecieFragment { _ = $0
+        let fragment = GQLSpecieFragment { _ = $0
             .averageHeight
             .averageLifespan
             .classification
@@ -237,7 +237,7 @@ class TestFragments: XCTestCase {
     }
 
     func testSpecieConnectionFragment() {
-        let fragment = SpecieConnectionFragment { _ = $0
+        let fragment = GQLSpecieConnectionFragment { _ = $0
             .totalCount
             .edges { _ = $0
                 .cursor
@@ -266,7 +266,7 @@ class TestFragments: XCTestCase {
     }
 
     func testStarshipEdgeFragment() {
-        let fragment = StarshipEdgeFragment { _ = $0
+        let fragment = GQLStarshipEdgeFragment { _ = $0
             .cursor
             .node { _ = $0
                 .cargoCapacity
@@ -292,7 +292,7 @@ class TestFragments: XCTestCase {
     }
 
     func testSpecieEdgeFragment() {
-        let fragment = SpecieEdgeFragment { _ = $0
+        let fragment = GQLSpecieEdgeFragment { _ = $0
             .cursor
             .node { _ = $0
                 .averageHeight
@@ -312,7 +312,7 @@ class TestFragments: XCTestCase {
     }
 
     func testVehicleConnectionFragment() {
-        let fragment = VehicleConnectionFragment { _ = $0
+        let fragment = GQLVehicleConnectionFragment { _ = $0
             .totalCount
             .edges { _ = $0
                 .cursor
@@ -344,7 +344,7 @@ class TestFragments: XCTestCase {
     }
 
     func testVehicleEdgeFragment() {
-        let fragment = VehicleEdgeFragment { _ = $0
+        let fragment = GQLVehicleEdgeFragment { _ = $0
             .cursor
             .node { _ = $0
                 .cargoCapacity
@@ -367,7 +367,7 @@ class TestFragments: XCTestCase {
     }
     
     func testVehicleFragment() {
-        let fragment = VehicleFragment { _ = $0
+        let fragment = GQLVehicleFragment { _ = $0
             .cargoCapacity
             .consumables
             .costInCredits
@@ -387,7 +387,7 @@ class TestFragments: XCTestCase {
     }
     
     func testStarshipConnectionFragment() {
-        let fragment = StarshipConnectionFragment { _ = $0
+        let fragment = GQLStarshipConnectionFragment { _ = $0
             .totalCount
             .edges { _ = $0
                 .cursor
@@ -422,7 +422,7 @@ class TestFragments: XCTestCase {
     }
 
     func testPlanetEdgeFragment() {
-        let fragment = PlanetEdgeFragment { _ = $0
+        let fragment = GQLPlanetEdgeFragment { _ = $0
             .cursor
             .node { _ = $0
                 .climates
@@ -442,7 +442,7 @@ class TestFragments: XCTestCase {
     }
     
     func testDjangoDebugFragment() {
-        let fragment = DjangoDebugFragment { _ = $0
+        let fragment = GQLDjangoDebugFragment { _ = $0
             .sql { _ = $0
                 .alias
                 .duration
@@ -465,7 +465,7 @@ class TestFragments: XCTestCase {
     }
 
     func testDjangoDebugSQLFragment() {
-        let fragment = DjangoDebugSQLFragment { _ = $0
+        let fragment = GQLDjangoDebugSQLFragment { _ = $0
             .alias
             .duration
             .encoding
@@ -486,7 +486,7 @@ class TestFragments: XCTestCase {
     }
 
     func testCreateHeroPayloadFragment() {
-        let fragment = CreateHeroPayloadFragment { _ = $0
+        let fragment = GQLCreateHeroPayloadFragment { _ = $0
             .clientMutationId
             .ok
             .hero { _ = $0
@@ -499,7 +499,7 @@ class TestFragments: XCTestCase {
     }
 
     func testFilmConnectionFragment() {
-        let fragment = FilmConnectionFragment { _ = $0
+        let fragment = GQLFilmConnectionFragment { _ = $0
             .totalCount
             .edges { _ = $0
                 .cursor
@@ -525,7 +525,7 @@ class TestFragments: XCTestCase {
     }
     
     func testPlanetConnectionFragment() {
-        let fragment = PlanetConnectionFragment { _ = $0
+        let fragment = GQLPlanetConnectionFragment { _ = $0
             .totalCount
             .edges { _ = $0
                 .cursor

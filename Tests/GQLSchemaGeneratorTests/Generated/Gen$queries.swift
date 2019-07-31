@@ -128,7 +128,7 @@ public final class GQLStarship: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func pilots(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLStarship {
+    public func pilots(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLStarship {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -137,7 +137,7 @@ public final class GQLStarship: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLPersonConnection(name: "pilots", parameters: parameters)
+        let field = GQLPersonConnection(name: "pilots", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -155,7 +155,7 @@ public final class GQLStarship: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func films(episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLStarship {
+    public func films(alias _alias: String? = nil, episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLStarship {
         var parameters: [GraphQLParameter] = []
         
         if let arg = episodeId_Gt { parameters.append(GraphQLParameter(name: "episodeId_Gt", value: arg)) }
@@ -164,7 +164,7 @@ public final class GQLStarship: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLFilmConnection(name: "films", parameters: parameters)
+        let field = GQLFilmConnection(name: "films", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -181,7 +181,7 @@ public final class GQLStarship: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func starships(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLStarshipConnection) -> Void) -> GQLStarship {
+    public func starships(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLStarshipConnection) -> Void) -> GQLStarship {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -189,7 +189,7 @@ public final class GQLStarship: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLStarshipConnection(name: "starships", parameters: parameters)
+        let field = GQLStarshipConnection(name: "starships", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -268,7 +268,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func characters(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLFilm {
+    public func characters(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLFilm {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -277,7 +277,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLPersonConnection(name: "characters", parameters: parameters)
+        let field = GQLPersonConnection(name: "characters", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -295,7 +295,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func planets(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPlanetConnection) -> Void) -> GQLFilm {
+    public func planets(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPlanetConnection) -> Void) -> GQLFilm {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -304,7 +304,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLPlanetConnection(name: "planets", parameters: parameters)
+        let field = GQLPlanetConnection(name: "planets", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -321,7 +321,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func starships(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLStarshipConnection) -> Void) -> GQLFilm {
+    public func starships(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLStarshipConnection) -> Void) -> GQLFilm {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -329,7 +329,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLStarshipConnection(name: "starships", parameters: parameters)
+        let field = GQLStarshipConnection(name: "starships", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -347,7 +347,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func vehicles(name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLVehicleConnection) -> Void) -> GQLFilm {
+    public func vehicles(alias _alias: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLVehicleConnection) -> Void) -> GQLFilm {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name_Startswith { parameters.append(GraphQLParameter(name: "name_Startswith", value: arg)) }
@@ -356,7 +356,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLVehicleConnection(name: "vehicles", parameters: parameters)
+        let field = GQLVehicleConnection(name: "vehicles", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -373,7 +373,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func species(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GQLFilm {
+    public func species(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GQLFilm {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -381,7 +381,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLSpecieConnection(name: "species", parameters: parameters)
+        let field = GQLSpecieConnection(name: "species", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -399,7 +399,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func films(episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLFilm {
+    public func films(alias _alias: String? = nil, episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLFilm {
         var parameters: [GraphQLParameter] = []
         
         if let arg = episodeId_Gt { parameters.append(GraphQLParameter(name: "episodeId_Gt", value: arg)) }
@@ -408,7 +408,7 @@ public final class GQLFilm: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLFilmConnection(name: "films", parameters: parameters)
+        let field = GQLFilmConnection(name: "films", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -430,8 +430,8 @@ public final class GQLFilmEdge: GraphQLField {
 
     /// The item at the end of the edge
     @discardableResult
-    public func node(_ buildOn: (GQLFilm) -> Void) -> GQLFilmEdge {
-        let field = GQLFilm(name: "node", parameters: [])
+    public func node(alias _alias: String? = nil, _ buildOn: (GQLFilm) -> Void) -> GQLFilmEdge {
+        let field = GQLFilm(name: "node", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -453,8 +453,8 @@ public final class GQLPersonConnection: GraphQLField {
 
     /// No documentation available for `pageInfo`
     @discardableResult
-    public func pageInfo(_ buildOn: (GQLPageInfo) -> Void) -> GQLPersonConnection {
-        let field = GQLPageInfo(name: "pageInfo", parameters: [])
+    public func pageInfo(alias _alias: String? = nil, _ buildOn: (GQLPageInfo) -> Void) -> GQLPersonConnection {
+        let field = GQLPageInfo(name: "pageInfo", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -464,8 +464,8 @@ public final class GQLPersonConnection: GraphQLField {
 
     /// No documentation available for `edges`
     @discardableResult
-    public func edges(_ buildOn: (GQLPersonEdge) -> Void) -> GQLPersonConnection {
-        let field = GQLPersonEdge(name: "edges", parameters: [])
+    public func edges(alias _alias: String? = nil, _ buildOn: (GQLPersonEdge) -> Void) -> GQLPersonConnection {
+        let field = GQLPersonEdge(name: "edges", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -487,8 +487,8 @@ public final class GQLPersonEdge: GraphQLField {
 
     /// The item at the end of the edge
     @discardableResult
-    public func node(_ buildOn: (GQLPerson) -> Void) -> GQLPersonEdge {
-        let field = GQLPerson(name: "node", parameters: [])
+    public func node(alias _alias: String? = nil, _ buildOn: (GQLPerson) -> Void) -> GQLPersonEdge {
+        let field = GQLPerson(name: "node", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -583,8 +583,8 @@ public final class GQLPerson: GraphQLField, GQLNode {
     }
 
     @discardableResult
-    public func homeworld(_ buildOn: (GQLPlanet) -> Void) -> GQLPerson {
-        let field = GQLPlanet(name: "homeworld", parameters: [])
+    public func homeworld(alias _alias: String? = nil, _ buildOn: (GQLPlanet) -> Void) -> GQLPerson {
+        let field = GQLPlanet(name: "homeworld", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -601,7 +601,7 @@ public final class GQLPerson: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func species(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GQLPerson {
+    public func species(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GQLPerson {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -609,7 +609,7 @@ public final class GQLPerson: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLSpecieConnection(name: "species", parameters: parameters)
+        let field = GQLSpecieConnection(name: "species", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -627,7 +627,7 @@ public final class GQLPerson: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func films(episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLPerson {
+    public func films(alias _alias: String? = nil, episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLPerson {
         var parameters: [GraphQLParameter] = []
         
         if let arg = episodeId_Gt { parameters.append(GraphQLParameter(name: "episodeId_Gt", value: arg)) }
@@ -636,7 +636,7 @@ public final class GQLPerson: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLFilmConnection(name: "films", parameters: parameters)
+        let field = GQLFilmConnection(name: "films", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -653,7 +653,7 @@ public final class GQLPerson: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func starships(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLStarshipConnection) -> Void) -> GQLPerson {
+    public func starships(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLStarshipConnection) -> Void) -> GQLPerson {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -661,7 +661,7 @@ public final class GQLPerson: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLStarshipConnection(name: "starships", parameters: parameters)
+        let field = GQLStarshipConnection(name: "starships", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -679,7 +679,7 @@ public final class GQLPerson: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func vehicles(name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLVehicleConnection) -> Void) -> GQLPerson {
+    public func vehicles(alias _alias: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLVehicleConnection) -> Void) -> GQLPerson {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name_Startswith { parameters.append(GraphQLParameter(name: "name_Startswith", value: arg)) }
@@ -688,7 +688,7 @@ public final class GQLPerson: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLVehicleConnection(name: "vehicles", parameters: parameters)
+        let field = GQLVehicleConnection(name: "vehicles", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -776,7 +776,7 @@ public final class GQLPlanet: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func films(episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLPlanet {
+    public func films(alias _alias: String? = nil, episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLPlanet {
         var parameters: [GraphQLParameter] = []
         
         if let arg = episodeId_Gt { parameters.append(GraphQLParameter(name: "episodeId_Gt", value: arg)) }
@@ -785,7 +785,7 @@ public final class GQLPlanet: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLFilmConnection(name: "films", parameters: parameters)
+        let field = GQLFilmConnection(name: "films", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -804,7 +804,7 @@ public final class GQLPlanet: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func heroes(name_Contains: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLHeroConnection) -> Void) -> GQLPlanet {
+    public func heroes(alias _alias: String? = nil, name_Contains: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLHeroConnection) -> Void) -> GQLPlanet {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name_Contains { parameters.append(GraphQLParameter(name: "name_Contains", value: arg)) }
@@ -814,7 +814,7 @@ public final class GQLPlanet: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLHeroConnection(name: "heroes", parameters: parameters)
+        let field = GQLHeroConnection(name: "heroes", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -832,7 +832,7 @@ public final class GQLPlanet: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func residents(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLPlanet {
+    public func residents(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLPlanet {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -841,7 +841,7 @@ public final class GQLPlanet: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLPersonConnection(name: "residents", parameters: parameters)
+        let field = GQLPersonConnection(name: "residents", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -858,7 +858,7 @@ public final class GQLPlanet: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func species(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GQLPlanet {
+    public func species(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GQLPlanet {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -866,7 +866,7 @@ public final class GQLPlanet: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLSpecieConnection(name: "species", parameters: parameters)
+        let field = GQLSpecieConnection(name: "species", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -936,8 +936,8 @@ public final class GQLHeroConnection: GraphQLField {
 
     /// No documentation available for `pageInfo`
     @discardableResult
-    public func pageInfo(_ buildOn: (GQLPageInfo) -> Void) -> GQLHeroConnection {
-        let field = GQLPageInfo(name: "pageInfo", parameters: [])
+    public func pageInfo(alias _alias: String? = nil, _ buildOn: (GQLPageInfo) -> Void) -> GQLHeroConnection {
+        let field = GQLPageInfo(name: "pageInfo", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -947,8 +947,8 @@ public final class GQLHeroConnection: GraphQLField {
 
     /// No documentation available for `edges`
     @discardableResult
-    public func edges(_ buildOn: (GQLHeroEdge) -> Void) -> GQLHeroConnection {
-        let field = GQLHeroEdge(name: "edges", parameters: [])
+    public func edges(alias _alias: String? = nil, _ buildOn: (GQLHeroEdge) -> Void) -> GQLHeroConnection {
+        let field = GQLHeroEdge(name: "edges", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -987,8 +987,8 @@ public final class GQLHero: GraphQLField, GQLNode {
     }
 
     @discardableResult
-    public func homeworld(_ buildOn: (GQLPlanet) -> Void) -> GQLHero {
-        let field = GQLPlanet(name: "homeworld", parameters: [])
+    public func homeworld(alias _alias: String? = nil, _ buildOn: (GQLPlanet) -> Void) -> GQLHero {
+        let field = GQLPlanet(name: "homeworld", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1001,8 +1001,8 @@ public final class GQLHeroEdge: GraphQLField {
 
     /// The item at the end of the edge
     @discardableResult
-    public func node(_ buildOn: (GQLHero) -> Void) -> GQLHeroEdge {
-        let field = GQLHero(name: "node", parameters: [])
+    public func node(alias _alias: String? = nil, _ buildOn: (GQLHero) -> Void) -> GQLHeroEdge {
+        let field = GQLHero(name: "node", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1073,8 +1073,8 @@ public final class GQLSpecie: GraphQLField, GQLNode {
     }
 
     @discardableResult
-    public func homeworld(_ buildOn: (GQLPlanet) -> Void) -> GQLSpecie {
-        let field = GQLPlanet(name: "homeworld", parameters: [])
+    public func homeworld(alias _alias: String? = nil, _ buildOn: (GQLPlanet) -> Void) -> GQLSpecie {
+        let field = GQLPlanet(name: "homeworld", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1100,7 +1100,7 @@ public final class GQLSpecie: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func people(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLSpecie {
+    public func people(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLSpecie {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -1109,7 +1109,7 @@ public final class GQLSpecie: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLPersonConnection(name: "people", parameters: parameters)
+        let field = GQLPersonConnection(name: "people", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -1127,7 +1127,7 @@ public final class GQLSpecie: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func films(episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLSpecie {
+    public func films(alias _alias: String? = nil, episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLSpecie {
         var parameters: [GraphQLParameter] = []
         
         if let arg = episodeId_Gt { parameters.append(GraphQLParameter(name: "episodeId_Gt", value: arg)) }
@@ -1136,7 +1136,7 @@ public final class GQLSpecie: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLFilmConnection(name: "films", parameters: parameters)
+        let field = GQLFilmConnection(name: "films", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -1153,7 +1153,7 @@ public final class GQLSpecie: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func species(before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GQLSpecie {
+    public func species(alias _alias: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLSpecieConnection) -> Void) -> GQLSpecie {
         var parameters: [GraphQLParameter] = []
         
         if let arg = before { parameters.append(GraphQLParameter(name: "before", value: arg)) }
@@ -1161,7 +1161,7 @@ public final class GQLSpecie: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLSpecieConnection(name: "species", parameters: parameters)
+        let field = GQLSpecieConnection(name: "species", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -1201,8 +1201,8 @@ public final class GQLSpecieConnection: GraphQLField {
 
     /// No documentation available for `pageInfo`
     @discardableResult
-    public func pageInfo(_ buildOn: (GQLPageInfo) -> Void) -> GQLSpecieConnection {
-        let field = GQLPageInfo(name: "pageInfo", parameters: [])
+    public func pageInfo(alias _alias: String? = nil, _ buildOn: (GQLPageInfo) -> Void) -> GQLSpecieConnection {
+        let field = GQLPageInfo(name: "pageInfo", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1212,8 +1212,8 @@ public final class GQLSpecieConnection: GraphQLField {
 
     /// No documentation available for `edges`
     @discardableResult
-    public func edges(_ buildOn: (GQLSpecieEdge) -> Void) -> GQLSpecieConnection {
-        let field = GQLSpecieEdge(name: "edges", parameters: [])
+    public func edges(alias _alias: String? = nil, _ buildOn: (GQLSpecieEdge) -> Void) -> GQLSpecieConnection {
+        let field = GQLSpecieEdge(name: "edges", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1235,8 +1235,8 @@ public final class GQLStarshipEdge: GraphQLField {
 
     /// The item at the end of the edge
     @discardableResult
-    public func node(_ buildOn: (GQLStarship) -> Void) -> GQLStarshipEdge {
-        let field = GQLStarship(name: "node", parameters: [])
+    public func node(alias _alias: String? = nil, _ buildOn: (GQLStarship) -> Void) -> GQLStarshipEdge {
+        let field = GQLStarship(name: "node", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1258,8 +1258,8 @@ public final class GQLSpecieEdge: GraphQLField {
 
     /// The item at the end of the edge
     @discardableResult
-    public func node(_ buildOn: (GQLSpecie) -> Void) -> GQLSpecieEdge {
-        let field = GQLSpecie(name: "node", parameters: [])
+    public func node(alias _alias: String? = nil, _ buildOn: (GQLSpecie) -> Void) -> GQLSpecieEdge {
+        let field = GQLSpecie(name: "node", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1281,8 +1281,8 @@ public final class GQLVehicleConnection: GraphQLField {
 
     /// No documentation available for `pageInfo`
     @discardableResult
-    public func pageInfo(_ buildOn: (GQLPageInfo) -> Void) -> GQLVehicleConnection {
-        let field = GQLPageInfo(name: "pageInfo", parameters: [])
+    public func pageInfo(alias _alias: String? = nil, _ buildOn: (GQLPageInfo) -> Void) -> GQLVehicleConnection {
+        let field = GQLPageInfo(name: "pageInfo", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1292,8 +1292,8 @@ public final class GQLVehicleConnection: GraphQLField {
 
     /// No documentation available for `edges`
     @discardableResult
-    public func edges(_ buildOn: (GQLVehicleEdge) -> Void) -> GQLVehicleConnection {
-        let field = GQLVehicleEdge(name: "edges", parameters: [])
+    public func edges(alias _alias: String? = nil, _ buildOn: (GQLVehicleEdge) -> Void) -> GQLVehicleConnection {
+        let field = GQLVehicleEdge(name: "edges", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1315,8 +1315,8 @@ public final class GQLVehicleEdge: GraphQLField {
 
     /// The item at the end of the edge
     @discardableResult
-    public func node(_ buildOn: (GQLVehicle) -> Void) -> GQLVehicleEdge {
-        let field = GQLVehicle(name: "node", parameters: [])
+    public func node(alias _alias: String? = nil, _ buildOn: (GQLVehicle) -> Void) -> GQLVehicleEdge {
+        let field = GQLVehicle(name: "node", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1444,7 +1444,7 @@ public final class GQLVehicle: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func pilots(name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLVehicle {
+    public func pilots(alias _alias: String? = nil, name: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLPersonConnection) -> Void) -> GQLVehicle {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name { parameters.append(GraphQLParameter(name: "name", value: arg)) }
@@ -1453,7 +1453,7 @@ public final class GQLVehicle: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLPersonConnection(name: "pilots", parameters: parameters)
+        let field = GQLPersonConnection(name: "pilots", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -1471,7 +1471,7 @@ public final class GQLVehicle: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func films(episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLVehicle {
+    public func films(alias _alias: String? = nil, episodeId_Gt: Float? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLFilmConnection) -> Void) -> GQLVehicle {
         var parameters: [GraphQLParameter] = []
         
         if let arg = episodeId_Gt { parameters.append(GraphQLParameter(name: "episodeId_Gt", value: arg)) }
@@ -1480,7 +1480,7 @@ public final class GQLVehicle: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLFilmConnection(name: "films", parameters: parameters)
+        let field = GQLFilmConnection(name: "films", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -1498,7 +1498,7 @@ public final class GQLVehicle: GraphQLField, GQLNode {
     ///     - last: No documentation
     /// 
     @discardableResult
-    public func vehicles(name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLVehicleConnection) -> Void) -> GQLVehicle {
+    public func vehicles(alias _alias: String? = nil, name_Startswith: String? = nil, before: String? = nil, after: String? = nil, first: Int? = nil, last: Int? = nil, _ buildOn: (GQLVehicleConnection) -> Void) -> GQLVehicle {
         var parameters: [GraphQLParameter] = []
         
         if let arg = name_Startswith { parameters.append(GraphQLParameter(name: "name_Startswith", value: arg)) }
@@ -1507,7 +1507,7 @@ public final class GQLVehicle: GraphQLField, GQLNode {
         if let arg = first { parameters.append(GraphQLParameter(name: "first", value: arg)) }
         if let arg = last { parameters.append(GraphQLParameter(name: "last", value: arg)) }
         
-        let field = GQLVehicleConnection(name: "vehicles", parameters: parameters)
+        let field = GQLVehicleConnection(name: "vehicles", alias: _alias, parameters: parameters)
         try! self._add(child: field)
         
         buildOn(field)
@@ -1529,8 +1529,8 @@ public final class GQLStarshipConnection: GraphQLField {
 
     /// No documentation available for `pageInfo`
     @discardableResult
-    public func pageInfo(_ buildOn: (GQLPageInfo) -> Void) -> GQLStarshipConnection {
-        let field = GQLPageInfo(name: "pageInfo", parameters: [])
+    public func pageInfo(alias _alias: String? = nil, _ buildOn: (GQLPageInfo) -> Void) -> GQLStarshipConnection {
+        let field = GQLPageInfo(name: "pageInfo", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1540,8 +1540,8 @@ public final class GQLStarshipConnection: GraphQLField {
 
     /// No documentation available for `edges`
     @discardableResult
-    public func edges(_ buildOn: (GQLStarshipEdge) -> Void) -> GQLStarshipConnection {
-        let field = GQLStarshipEdge(name: "edges", parameters: [])
+    public func edges(alias _alias: String? = nil, _ buildOn: (GQLStarshipEdge) -> Void) -> GQLStarshipConnection {
+        let field = GQLStarshipEdge(name: "edges", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1563,8 +1563,8 @@ public final class GQLPlanetEdge: GraphQLField {
 
     /// The item at the end of the edge
     @discardableResult
-    public func node(_ buildOn: (GQLPlanet) -> Void) -> GQLPlanetEdge {
-        let field = GQLPlanet(name: "node", parameters: [])
+    public func node(alias _alias: String? = nil, _ buildOn: (GQLPlanet) -> Void) -> GQLPlanetEdge {
+        let field = GQLPlanet(name: "node", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1586,8 +1586,8 @@ public final class GQLDjangoDebug: GraphQLField {
 
     /// No documentation available for `sql`
     @discardableResult
-    public func sql(_ buildOn: (GQLDjangoDebugSQL) -> Void) -> GQLDjangoDebug {
-        let field = GQLDjangoDebugSQL(name: "sql", parameters: [])
+    public func sql(alias _alias: String? = nil, _ buildOn: (GQLDjangoDebugSQL) -> Void) -> GQLDjangoDebug {
+        let field = GQLDjangoDebugSQL(name: "sql", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1729,8 +1729,8 @@ public final class GQLCreateHeroPayload: GraphQLField {
 
     /// No documentation available for `hero`
     @discardableResult
-    public func hero(_ buildOn: (GQLHero) -> Void) -> GQLCreateHeroPayload {
-        let field = GQLHero(name: "hero", parameters: [])
+    public func hero(alias _alias: String? = nil, _ buildOn: (GQLHero) -> Void) -> GQLCreateHeroPayload {
+        let field = GQLHero(name: "hero", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1761,8 +1761,8 @@ public final class GQLFilmConnection: GraphQLField {
 
     /// No documentation available for `pageInfo`
     @discardableResult
-    public func pageInfo(_ buildOn: (GQLPageInfo) -> Void) -> GQLFilmConnection {
-        let field = GQLPageInfo(name: "pageInfo", parameters: [])
+    public func pageInfo(alias _alias: String? = nil, _ buildOn: (GQLPageInfo) -> Void) -> GQLFilmConnection {
+        let field = GQLPageInfo(name: "pageInfo", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1772,8 +1772,8 @@ public final class GQLFilmConnection: GraphQLField {
 
     /// No documentation available for `edges`
     @discardableResult
-    public func edges(_ buildOn: (GQLFilmEdge) -> Void) -> GQLFilmConnection {
-        let field = GQLFilmEdge(name: "edges", parameters: [])
+    public func edges(alias _alias: String? = nil, _ buildOn: (GQLFilmEdge) -> Void) -> GQLFilmConnection {
+        let field = GQLFilmEdge(name: "edges", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1795,8 +1795,8 @@ public final class GQLPlanetConnection: GraphQLField {
 
     /// No documentation available for `pageInfo`
     @discardableResult
-    public func pageInfo(_ buildOn: (GQLPageInfo) -> Void) -> GQLPlanetConnection {
-        let field = GQLPageInfo(name: "pageInfo", parameters: [])
+    public func pageInfo(alias _alias: String? = nil, _ buildOn: (GQLPageInfo) -> Void) -> GQLPlanetConnection {
+        let field = GQLPageInfo(name: "pageInfo", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)
@@ -1806,8 +1806,8 @@ public final class GQLPlanetConnection: GraphQLField {
 
     /// No documentation available for `edges`
     @discardableResult
-    public func edges(_ buildOn: (GQLPlanetEdge) -> Void) -> GQLPlanetConnection {
-        let field = GQLPlanetEdge(name: "edges", parameters: [])
+    public func edges(alias _alias: String? = nil, _ buildOn: (GQLPlanetEdge) -> Void) -> GQLPlanetConnection {
+        let field = GQLPlanetEdge(name: "edges", alias: _alias, parameters: [])
         try! self._add(child: field)
         
         buildOn(field)

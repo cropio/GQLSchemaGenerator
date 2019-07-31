@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGeneratorCore"
-               BuildableName = "GQLSchemaGeneratorCore.framework"
-               BlueprintName = "GQLSchemaGeneratorCore"
+               BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGenerator"
+               BuildableName = "GQLSchemaGenerator"
+               BlueprintName = "GQLSchemaGenerator"
                ReferencedContainer = "container:GQLSchemaGenerator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGenerator"
-               BuildableName = "GQLSchemaGenerator"
-               BlueprintName = "GQLSchemaGenerator"
+               BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGeneratorCore"
+               BuildableName = "GQLSchemaGeneratorCore.framework"
+               BlueprintName = "GQLSchemaGeneratorCore"
                ReferencedContainer = "container:GQLSchemaGenerator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,7 +40,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGeneratorCore"
+            BuildableName = "GQLSchemaGeneratorCore.framework"
+            BlueprintName = "GQLSchemaGeneratorCore"
+            ReferencedContainer = "container:GQLSchemaGenerator.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -69,9 +80,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGeneratorCore"
-            BuildableName = "GQLSchemaGeneratorCore.framework"
-            BlueprintName = "GQLSchemaGeneratorCore"
+            BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGenerator"
+            BuildableName = "GQLSchemaGenerator"
+            BlueprintName = "GQLSchemaGenerator"
             ReferencedContainer = "container:GQLSchemaGenerator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
