@@ -2,30 +2,29 @@ import Foundation
 
 import GQLSchema
 
-/// A single transport craft that has hyperdrive capability.
-public final class GQLStarshipFragment: GraphQLFragment {
+public final class GQLFilmConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
-        return "Starship"
+        return "FilmConnection"
     }
 
     private(set) public var name: String
-    private(set) public var field: GQLStarship
-    public required init(name: String, field: GQLStarship) {
+    private(set) public var field: GQLFilmConnection
+    public required init(name: String, field: GQLFilmConnection) {
         self.name = name
         self.field = field
     }
 }
 
-public final class GQLFilmFragment: GraphQLFragment {
+public final class GQLPageInfoFragment: GraphQLFragment {
 
     public static var typeName: String {
-        return "Film"
+        return "PageInfo"
     }
 
     private(set) public var name: String
-    private(set) public var field: GQLFilm
-    public required init(name: String, field: GQLFilm) {
+    private(set) public var field: GQLPageInfo
+    public required init(name: String, field: GQLPageInfo) {
         self.name = name
         self.field = field
     }
@@ -40,6 +39,20 @@ public final class GQLFilmEdgeFragment: GraphQLFragment {
     private(set) public var name: String
     private(set) public var field: GQLFilmEdge
     public required init(name: String, field: GQLFilmEdge) {
+        self.name = name
+        self.field = field
+    }
+}
+
+public final class GQLFilmFragment: GraphQLFragment {
+
+    public static var typeName: String {
+        return "Film"
+    }
+
+    private(set) public var name: String
+    private(set) public var field: GQLFilm
+    public required init(name: String, field: GQLFilm) {
         self.name = name
         self.field = field
     }
@@ -104,20 +117,6 @@ public final class GQLPlanetFragment: GraphQLFragment {
     }
 }
 
-public final class GQLPageInfoFragment: GraphQLFragment {
-
-    public static var typeName: String {
-        return "PageInfo"
-    }
-
-    private(set) public var name: String
-    private(set) public var field: GQLPageInfo
-    public required init(name: String, field: GQLPageInfo) {
-        self.name = name
-        self.field = field
-    }
-}
-
 public final class GQLHeroConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
@@ -127,6 +126,20 @@ public final class GQLHeroConnectionFragment: GraphQLFragment {
     private(set) public var name: String
     private(set) public var field: GQLHeroConnection
     public required init(name: String, field: GQLHeroConnection) {
+        self.name = name
+        self.field = field
+    }
+}
+
+public final class GQLHeroEdgeFragment: GraphQLFragment {
+
+    public static var typeName: String {
+        return "HeroEdge"
+    }
+
+    private(set) public var name: String
+    private(set) public var field: GQLHeroEdge
+    public required init(name: String, field: GQLHeroEdge) {
         self.name = name
         self.field = field
     }
@@ -147,15 +160,29 @@ public final class GQLHeroFragment: GraphQLFragment {
     }
 }
 
-public final class GQLHeroEdgeFragment: GraphQLFragment {
+public final class GQLSpecieConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
-        return "HeroEdge"
+        return "SpecieConnection"
     }
 
     private(set) public var name: String
-    private(set) public var field: GQLHeroEdge
-    public required init(name: String, field: GQLHeroEdge) {
+    private(set) public var field: GQLSpecieConnection
+    public required init(name: String, field: GQLSpecieConnection) {
+        self.name = name
+        self.field = field
+    }
+}
+
+public final class GQLSpecieEdgeFragment: GraphQLFragment {
+
+    public static var typeName: String {
+        return "SpecieEdge"
+    }
+
+    private(set) public var name: String
+    private(set) public var field: GQLSpecieEdge
+    public required init(name: String, field: GQLSpecieEdge) {
         self.name = name
         self.field = field
     }
@@ -176,15 +203,15 @@ public final class GQLSpecieFragment: GraphQLFragment {
     }
 }
 
-public final class GQLSpecieConnectionFragment: GraphQLFragment {
+public final class GQLStarshipConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
-        return "SpecieConnection"
+        return "StarshipConnection"
     }
 
     private(set) public var name: String
-    private(set) public var field: GQLSpecieConnection
-    public required init(name: String, field: GQLSpecieConnection) {
+    private(set) public var field: GQLStarshipConnection
+    public required init(name: String, field: GQLStarshipConnection) {
         self.name = name
         self.field = field
     }
@@ -204,15 +231,16 @@ public final class GQLStarshipEdgeFragment: GraphQLFragment {
     }
 }
 
-public final class GQLSpecieEdgeFragment: GraphQLFragment {
+/// A single transport craft that has hyperdrive capability.
+public final class GQLStarshipFragment: GraphQLFragment {
 
     public static var typeName: String {
-        return "SpecieEdge"
+        return "Starship"
     }
 
     private(set) public var name: String
-    private(set) public var field: GQLSpecieEdge
-    public required init(name: String, field: GQLSpecieEdge) {
+    private(set) public var field: GQLStarship
+    public required init(name: String, field: GQLStarship) {
         self.name = name
         self.field = field
     }
@@ -261,15 +289,15 @@ public final class GQLVehicleFragment: GraphQLFragment {
     }
 }
 
-public final class GQLStarshipConnectionFragment: GraphQLFragment {
+public final class GQLPlanetConnectionFragment: GraphQLFragment {
 
     public static var typeName: String {
-        return "StarshipConnection"
+        return "PlanetConnection"
     }
 
     private(set) public var name: String
-    private(set) public var field: GQLStarshipConnection
-    public required init(name: String, field: GQLStarshipConnection) {
+    private(set) public var field: GQLPlanetConnection
+    public required init(name: String, field: GQLPlanetConnection) {
         self.name = name
         self.field = field
     }
@@ -326,34 +354,6 @@ public final class GQLCreateHeroPayloadFragment: GraphQLFragment {
     private(set) public var name: String
     private(set) public var field: GQLCreateHeroPayload
     public required init(name: String, field: GQLCreateHeroPayload) {
-        self.name = name
-        self.field = field
-    }
-}
-
-public final class GQLFilmConnectionFragment: GraphQLFragment {
-
-    public static var typeName: String {
-        return "FilmConnection"
-    }
-
-    private(set) public var name: String
-    private(set) public var field: GQLFilmConnection
-    public required init(name: String, field: GQLFilmConnection) {
-        self.name = name
-        self.field = field
-    }
-}
-
-public final class GQLPlanetConnectionFragment: GraphQLFragment {
-
-    public static var typeName: String {
-        return "PlanetConnection"
-    }
-
-    private(set) public var name: String
-    private(set) public var field: GQLPlanetConnection
-    public required init(name: String, field: GQLPlanetConnection) {
         self.name = name
         self.field = field
     }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGenerator"
+               BlueprintIdentifier = "gqlschemagenerator::GQLSchemaGenerator"
                BuildableName = "GQLSchemaGenerator"
                BlueprintName = "GQLSchemaGenerator"
                ReferencedContainer = "container:GQLSchemaGenerator.xcodeproj">
@@ -32,15 +32,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGeneratorTests"
+               BlueprintIdentifier = "gqlschemagenerator::GQLSchemaGeneratorTests"
                BuildableName = "GQLSchemaGeneratorTests.xctest"
                BlueprintName = "GQLSchemaGeneratorTests"
                ReferencedContainer = "container:GQLSchemaGenerator.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -56,14 +54,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "GQLSchemaGenerator::GQLSchemaGenerator"
+            BlueprintIdentifier = "gqlschemagenerator::GQLSchemaGenerator"
             BuildableName = "GQLSchemaGenerator"
             BlueprintName = "GQLSchemaGenerator"
             ReferencedContainer = "container:GQLSchemaGenerator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

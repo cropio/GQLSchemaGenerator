@@ -1002,9 +1002,15 @@ extension Swift {
                 if field.type.hasScalar && field.arguments.isEmpty {
                     containers += self.generate(propertyFor: field, ofType: name, isInterface: isInterface, isDeprecated: field.isDeprecated, deprecationReason: field.deprecationReason)
                 } else {
-                    containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: !field.type.hasScalar, rootType: rootType)
+                    containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: !field.type.hasScalar, rootType: rootType, valueType: false)
+                    if !field.arguments.isEmpty {
+                        containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: !field.type.hasScalar, rootType: rootType, valueType: true)
+                    }
                     if rootType != nil {
-                        containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: false, rootType: rootType, fragment: true)
+                        containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: false, rootType: rootType, fragment: true, valueType: false)
+                        if !field.arguments.isEmpty {
+                            containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: false, rootType: rootType, fragment: true, valueType: true)
+                        }
                     }
                 }
             }
@@ -1049,7 +1055,7 @@ extension Swift {
             )
         }
         
-        private func generate(methodFor field: __Schema.__Field, ofType type: String, isInterface: Bool, buildable: Bool, rootType: String?, fragment: Bool = false) -> Method {
+        private func generate(methodFor field: __Schema.__Field, ofType type: String, isInterface: Bool, buildable: Bool, rootType: String?, fragment: Bool = false, valueType: Bool) -> Method {
             
             precondition(!field.arguments.isEmpty || !field.type.hasScalar)
             
@@ -1059,7 +1065,7 @@ extension Swift {
              */
             var parameters = [Method.Parameter(alias: "alias", name: "_alias", type: "String?", default: .nil)]
             
-            parameters += field.parameters(isInterface: isInterface)
+            parameters += field.parameters(isInterface: isInterface, valueType: valueType)
             
             /* ----------------------------------------
              ** We append the `buildOn` closure only if
@@ -1515,7 +1521,7 @@ fileprivate extension Describeable {
 //
 fileprivate extension __Schema.__Argument {
     
-    func methodParameter(useDefaultValues: Bool) -> Swift.Method.Parameter {
+    func methodParameter(useDefaultValues: Bool, valueType: Bool) -> Swift.Method.Parameter {
         
         let nullable = self.type.isTopLevelNullable
         
@@ -1524,8 +1530,9 @@ fileprivate extension __Schema.__Argument {
             defaultValue = .nil
         }
         
-        let typeString = self.type.recursiveQueryType(unmodified: self.type.hasScalar, ignoreNull: true)
-        
+        let type = self.type.recursiveQueryType(unmodified: self.type.hasScalar, ignoreNull: true)
+        let typeString = valueType ? "GraphQLValue<\(type)>" : type
+
         return Swift.Method.Parameter(
             name:    self.name,
             type:    nullable ? typeString.nullable : typeString,
@@ -1560,9 +1567,9 @@ fileprivate extension __Schema.__Field {
         return comments
     }
     
-    func parameters(isInterface: Bool) -> [Swift.Method.Parameter] {
+    func parameters(isInterface: Bool, valueType: Bool) -> [Swift.Method.Parameter] {
         return self.arguments.map {
-            $0.methodParameter(useDefaultValues: !isInterface)
+            $0.methodParameter(useDefaultValues: !isInterface, valueType: valueType)
         }
     }
 }
