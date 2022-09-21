@@ -480,7 +480,7 @@ extension Swift {
                 inheritances: inputObject.inheritances(from: [self.inputClassName()]),
                 comments:     inputObject.descriptionComments()
             )
-            
+
             if let fields = inputObject.inputFields {
                 
                 /* -----------------------------------
@@ -490,12 +490,13 @@ extension Swift {
                 for field in fields {
                     swiftClass += self.generate(inputPropertyFor: field)
                 }
-                
+
+                // Value type init
                 var initParams: [Method.Parameter] = []
                 for field in fields {
                     initParams += Method.Parameter(
                         name:    field.name,
-                        type:    field.type.recursiveQueryInputType(unmodified: field.type.hasScalar),
+                        type:    field.type.recursiveQueryInputType(unmodified: field.type.hasScalar, valueType: true),
                         default: field.type.isTopLevelNullable ? .nil : nil
                     )
                 }
@@ -510,6 +511,31 @@ extension Swift {
                     name:       .initialization(.none, false),
                     parameters: initParams,
                     body:       initBody,
+                    comments:   [
+                        "Auto-generate initialier that provides default values for nullable parameters"
+                    ]
+                )
+
+                // Legacy init
+                var legacyInitParams: [Method.Parameter] = []
+                for field in fields {
+                    legacyInitParams += Method.Parameter(
+                        name:    field.name,
+                        type:    field.type.recursiveQueryInputType(unmodified: field.type.hasScalar, valueType: false),
+                        default: field.type.isTopLevelNullable ? .nil : nil
+                    )
+                }
+
+                var legacyInitBody: [Line] = []
+                for field in fields {
+                    legacyInitBody += Line(content: "self.\(field.name) = \(field.name).map { .value($0) }")
+                }
+
+                swiftClass += Method(
+                    visibility: .public,
+                    name:       .initialization(.none, false),
+                    parameters: legacyInitParams,
+                    body:       legacyInitBody,
                     comments:   [
                         "Auto-generate initialier that provides default values for nullable parameters"
                     ]
@@ -981,7 +1007,7 @@ extension Swift {
             return Property(
                 visibility: .public,
                 name:       field.name,
-                returnType: field.type.recursiveQueryInputType(unmodified: field.type.hasScalar),
+                returnType: field.type.recursiveQueryInputType(unmodified: field.type.hasScalar, valueType: true),
                 comments:   field.descriptionComments()
             )
         }
@@ -1434,9 +1460,10 @@ fileprivate extension __Schema.__ObjectType {
         case model
     }
     
-    func recursiveQueryInputType(unmodified: Bool) -> String {
+    func recursiveQueryInputType(unmodified: Bool, valueType: Bool) -> String {
         let type = self.recursiveType(queryKind: .query, unmodified: unmodified, ignoreNull: true)
-        return self.isTopLevelNullable ? type.nullable : type
+        let typeString = valueType ? "GraphQLValue<\(type)>" : type
+        return self.isTopLevelNullable ? typeString.nullable : typeString
     }
     
     func recursiveModelInputType(unmodified: Bool) -> String {
