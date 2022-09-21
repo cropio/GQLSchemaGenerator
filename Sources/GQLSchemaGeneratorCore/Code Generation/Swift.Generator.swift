@@ -237,10 +237,13 @@ extension Swift {
                 visibility:   .public,
                 kind:         .enum,
                 name:         object.name,
-                inheritances: ["String"],
+                inheritances: ["String", "GraphQLValueType"],
                 comments:     object.descriptionComments()
             )
-            
+
+            enumClass.add(child: Line(content: "public var _graphQLFormat: String { rawValue._graphQLFormat }"))
+            enumClass.add(child: Line(content: ""))
+
             for value in object.enumValues! {
                 enumClass.add(child: EnumCase(
                     name:     "`\(value.name.snakeToCamel ?? value.name)`",
@@ -248,7 +251,7 @@ extension Swift {
                     comments: value.descriptionComments()
                 ))
             }
-            
+
             return enumClass
         }
         
@@ -458,7 +461,7 @@ extension Swift {
                 comments:     object.descriptionComments()
             )
             
-            if let fields = object.fields {
+            if let fields = object.fields?.sorted(by: { $0.name < $1.name }) {
                 swiftClass += self.generate(fields: fields, ofType: object.queryTypeName, isInterface: false, rootType: rootType)
             }
             
@@ -481,7 +484,7 @@ extension Swift {
                 comments:     inputObject.descriptionComments()
             )
 
-            if let fields = inputObject.inputFields {
+            if let fields = inputObject.inputFields?.sorted(by: { $0.name < $1.name }) {
                 
                 /* -----------------------------------
                  ** First we create stored  properties
