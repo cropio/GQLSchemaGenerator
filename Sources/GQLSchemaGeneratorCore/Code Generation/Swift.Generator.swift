@@ -1031,15 +1031,9 @@ extension Swift {
                 if field.type.hasScalar && field.arguments.isEmpty {
                     containers += self.generate(propertyFor: field, ofType: name, isInterface: isInterface, isDeprecated: field.isDeprecated, deprecationReason: field.deprecationReason)
                 } else {
-                    containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: !field.type.hasScalar, rootType: rootType, valueType: false)
-                    if !field.arguments.isEmpty {
-                        containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: !field.type.hasScalar, rootType: rootType, valueType: true)
-                    }
+                    containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: !field.type.hasScalar, rootType: rootType, valueType: true)
                     if rootType != nil {
-                        containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: false, rootType: rootType, fragment: true, valueType: false)
-                        if !field.arguments.isEmpty {
-                            containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: false, rootType: rootType, fragment: true, valueType: true)
-                        }
+                        containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: false, rootType: rootType, fragment: true, valueType: true)
                     }
                 }
             }
