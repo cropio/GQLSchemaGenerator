@@ -241,7 +241,7 @@ extension Swift {
                 comments:     object.descriptionComments()
             )
 
-            enumClass.add(child: Line(content: "public var _graphQLFormat: String { rawValue._graphQLFormat }"))
+            enumClass.add(child: Line(content: "public var _graphQLFormat: String { rawValue }"))
             enumClass.add(child: Line(content: ""))
 
             for value in object.enumValues! {
