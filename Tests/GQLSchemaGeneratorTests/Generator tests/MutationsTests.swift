@@ -26,12 +26,12 @@ class MutationsTests: XCTestCase {
             }
         }
         let string = "createHero{ clientMutationId hero{ id name } } "
-        
+
         XCTAssertEqual(query.body, string)
         XCTAssertEqual(query.type, .mutation)
         XCTAssertNil(query.fragmentQuery)
     }
-    
+
     func testCreateHeroFragment() {
         let fragment = GQLCreateHeroPayloadFragment { _ = $0
             .clientMutationId
@@ -42,7 +42,7 @@ class MutationsTests: XCTestCase {
         }
         let query = GQLMutation.createHero(fragment: fragment)
         let string = "createHero{ ...CreateHeroPayloadFragment } "
-        
+
         XCTAssertEqual(query.body, string)
         XCTAssertEqual(query.fragmentQuery?.body, fragment.description)
         XCTAssertEqual(query.type, .mutation)

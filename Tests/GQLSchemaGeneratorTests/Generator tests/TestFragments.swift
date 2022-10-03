@@ -35,11 +35,11 @@ class TestFragments: XCTestCase {
             .starshipClass
             .crew
         }
-        
+
         let string = "fragment StarshipFragment on Starship{ cargoCapacity consumables costInCredits hyperdriveRating id length manufacturer manufacturers maxAtmospheringSpeed MGLT model name passengers starshipClass crew } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testFilmFragment() {
         let fragment = GQLFilmFragment { _ = $0
             .director
@@ -70,7 +70,7 @@ class TestFragments: XCTestCase {
         let string = "fragment FilmEdgeFragment on FilmEdge{ cursor node{ director episodeId id openingCrawl producers releaseDate title } } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testPersonConnectionFragment() {
         let fragment = GQLPersonConnectionFragment { _ = $0
             .totalCount
@@ -98,7 +98,7 @@ class TestFragments: XCTestCase {
         let string = "fragment PersonConnectionFragment on PersonConnection{ totalCount edges{ cursor node{ birthYear eyeColor gender hairColor height id mass name skinColor } } pageInfo{ endCursor hasNextPage hasPreviousPage startCursor } } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testPersonEdgeFragment() {
         let fragment = GQLPersonEdgeFragment { _ = $0
             .cursor
@@ -117,7 +117,7 @@ class TestFragments: XCTestCase {
         let string = "fragment PersonEdgeFragment on PersonEdge{ cursor node{ birthYear eyeColor gender hairColor height id mass name skinColor } } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testPersonFragment() {
         let fragment = GQLPersonFragment { _ = $0
             .birthYear
@@ -133,7 +133,7 @@ class TestFragments: XCTestCase {
         let string = "fragment PersonFragment on Person{ birthYear eyeColor gender hairColor height id mass name skinColor } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testPlanetFragment() {
         let fragment = GQLPlanetFragment { _ = $0
             .climates
@@ -150,7 +150,7 @@ class TestFragments: XCTestCase {
         let string = "fragment PlanetFragment on Planet{ climates diameter gravity id name orbitalPeriod population rotationPeriod surfaceWater terrains } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testPageInfoFragment() {
         let fragment = GQLPageInfoFragment { _ = $0
             .endCursor
@@ -161,7 +161,7 @@ class TestFragments: XCTestCase {
         let string = "fragment PageInfoFragment on PageInfo{ endCursor hasNextPage hasPreviousPage startCursor } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testHeroConnectionFragment() {
         let fragment = GQLHeroConnectionFragment { _ = $0
             .totalCount
@@ -182,7 +182,7 @@ class TestFragments: XCTestCase {
         let string = "fragment HeroConnectionFragment on HeroConnection{ totalCount edges{ cursor node{ id name } } pageInfo{ endCursor hasNextPage hasPreviousPage startCursor } } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testHeroFragment() {
         let fragment = GQLHeroFragment { _ = $0
             .id
@@ -203,7 +203,7 @@ class TestFragments: XCTestCase {
         let string = "fragment HeroFragment on Hero{ id name homeworld{ climates diameter gravity id name orbitalPeriod population rotationPeriod surfaceWater terrains } } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testHeroEdgeFragment() {
         let fragment = GQLHeroEdgeFragment { _ = $0
             .cursor
@@ -215,7 +215,7 @@ class TestFragments: XCTestCase {
         let string = "fragment HeroEdgeFragment on HeroEdge{ cursor node{ id name } } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testSpecieFragment() {
         let fragment = GQLSpecieFragment { _ = $0
             .averageHeight
@@ -365,7 +365,7 @@ class TestFragments: XCTestCase {
         let string = "fragment VehicleEdgeFragment on VehicleEdge{ cursor node{ cargoCapacity consumables costInCredits crew id length manufacturer manufacturers maxAtmospheringSpeed model name passengers vehicleClass } } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testVehicleFragment() {
         let fragment = GQLVehicleFragment { _ = $0
             .cargoCapacity
@@ -385,7 +385,7 @@ class TestFragments: XCTestCase {
         let string = "fragment VehicleFragment on Vehicle{ cargoCapacity consumables costInCredits crew id length manufacturer manufacturers maxAtmospheringSpeed model name passengers vehicleClass } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testStarshipConnectionFragment() {
         let fragment = GQLStarshipConnectionFragment { _ = $0
             .totalCount
@@ -440,7 +440,7 @@ class TestFragments: XCTestCase {
         let string = "fragment PlanetEdgeFragment on PlanetEdge{ cursor node{ climates diameter gravity id name orbitalPeriod population rotationPeriod surfaceWater terrains } } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testDjangoDebugFragment() {
         let fragment = GQLDjangoDebugFragment { _ = $0
             .sql { _ = $0
@@ -523,7 +523,7 @@ class TestFragments: XCTestCase {
         let string = "fragment FilmConnectionFragment on FilmConnection{ totalCount edges{ cursor node{ director episodeId id openingCrawl producers releaseDate title } } pageInfo{ endCursor hasNextPage hasPreviousPage startCursor } } "
         XCTAssertEqual(fragment.description, string)
     }
-    
+
     func testPlanetConnectionFragment() {
         let fragment = GQLPlanetConnectionFragment { _ = $0
             .totalCount

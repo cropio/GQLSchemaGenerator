@@ -237,10 +237,13 @@ extension Swift {
                 visibility:   .public,
                 kind:         .enum,
                 name:         object.name,
-                inheritances: ["String"],
+                inheritances: ["String", "GraphQLValueType"],
                 comments:     object.descriptionComments()
             )
-            
+
+            enumClass.add(child: Line(content: "public var _graphQLFormat: String { rawValue }"))
+            enumClass.add(child: Line(content: ""))
+
             for value in object.enumValues! {
                 enumClass.add(child: EnumCase(
                     name:     "`\(value.name.snakeToCamel ?? value.name)`",
@@ -248,7 +251,7 @@ extension Swift {
                     comments: value.descriptionComments()
                 ))
             }
-            
+
             return enumClass
         }
         
@@ -458,7 +461,7 @@ extension Swift {
                 comments:     object.descriptionComments()
             )
             
-            if let fields = object.fields {
+            if let fields = object.fields?.sorted(by: { $0.name < $1.name }) {
                 swiftClass += self.generate(fields: fields, ofType: object.queryTypeName, isInterface: false, rootType: rootType)
             }
             
@@ -480,8 +483,8 @@ extension Swift {
                 inheritances: inputObject.inheritances(from: [self.inputClassName()]),
                 comments:     inputObject.descriptionComments()
             )
-            
-            if let fields = inputObject.inputFields {
+
+            if let fields = inputObject.inputFields?.sorted(by: { $0.name < $1.name }) {
                 
                 /* -----------------------------------
                  ** First we create stored  properties
@@ -490,12 +493,13 @@ extension Swift {
                 for field in fields {
                     swiftClass += self.generate(inputPropertyFor: field)
                 }
-                
+
+                // Value type init
                 var initParams: [Method.Parameter] = []
                 for field in fields {
                     initParams += Method.Parameter(
                         name:    field.name,
-                        type:    field.type.recursiveQueryInputType(unmodified: field.type.hasScalar),
+                        type:    field.type.recursiveQueryInputType(unmodified: field.type.hasScalar, valueType: true),
                         default: field.type.isTopLevelNullable ? .nil : nil
                     )
                 }
@@ -510,6 +514,31 @@ extension Swift {
                     name:       .initialization(.none, false),
                     parameters: initParams,
                     body:       initBody,
+                    comments:   [
+                        "Auto-generate initialier that provides default values for nullable parameters"
+                    ]
+                )
+
+                // Legacy init
+                var legacyInitParams: [Method.Parameter] = []
+                for field in fields {
+                    legacyInitParams += Method.Parameter(
+                        name:    field.name,
+                        type:    field.type.recursiveQueryInputType(unmodified: field.type.hasScalar, valueType: false),
+                        default: field.type.isTopLevelNullable ? .nil : nil
+                    )
+                }
+
+                var legacyInitBody: [Line] = []
+                for field in fields {
+                    legacyInitBody += Line(content: "self.\(field.name) = \(field.name).map { .value($0) }")
+                }
+
+                swiftClass += Method(
+                    visibility: .public,
+                    name:       .initialization(.none, false),
+                    parameters: legacyInitParams,
+                    body:       legacyInitBody,
                     comments:   [
                         "Auto-generate initialier that provides default values for nullable parameters"
                     ]
@@ -981,7 +1010,7 @@ extension Swift {
             return Property(
                 visibility: .public,
                 name:       field.name,
-                returnType: field.type.recursiveQueryInputType(unmodified: field.type.hasScalar),
+                returnType: field.type.recursiveQueryInputType(unmodified: field.type.hasScalar, valueType: true),
                 comments:   field.descriptionComments()
             )
         }
@@ -1002,9 +1031,9 @@ extension Swift {
                 if field.type.hasScalar && field.arguments.isEmpty {
                     containers += self.generate(propertyFor: field, ofType: name, isInterface: isInterface, isDeprecated: field.isDeprecated, deprecationReason: field.deprecationReason)
                 } else {
-                    containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: !field.type.hasScalar, rootType: rootType)
+                    containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: !field.type.hasScalar, rootType: rootType, valueType: true)
                     if rootType != nil {
-                        containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: false, rootType: rootType, fragment: true)
+                        containers += self.generate(methodFor: field, ofType: name, isInterface: isInterface, buildable: false, rootType: rootType, fragment: true, valueType: true)
                     }
                 }
             }
@@ -1049,7 +1078,7 @@ extension Swift {
             )
         }
         
-        private func generate(methodFor field: __Schema.__Field, ofType type: String, isInterface: Bool, buildable: Bool, rootType: String?, fragment: Bool = false) -> Method {
+        private func generate(methodFor field: __Schema.__Field, ofType type: String, isInterface: Bool, buildable: Bool, rootType: String?, fragment: Bool = false, valueType: Bool) -> Method {
             
             precondition(!field.arguments.isEmpty || !field.type.hasScalar)
             
@@ -1059,7 +1088,7 @@ extension Swift {
              */
             var parameters = [Method.Parameter(alias: "alias", name: "_alias", type: "String?", default: .nil)]
             
-            parameters += field.parameters(isInterface: isInterface)
+            parameters += field.parameters(isInterface: isInterface, valueType: valueType)
             
             /* ----------------------------------------
              ** We append the `buildOn` closure only if
@@ -1428,9 +1457,10 @@ fileprivate extension __Schema.__ObjectType {
         case model
     }
     
-    func recursiveQueryInputType(unmodified: Bool) -> String {
+    func recursiveQueryInputType(unmodified: Bool, valueType: Bool) -> String {
         let type = self.recursiveType(queryKind: .query, unmodified: unmodified, ignoreNull: true)
-        return self.isTopLevelNullable ? type.nullable : type
+        let typeString = valueType ? "GraphQLValue<\(type)>" : type
+        return self.isTopLevelNullable ? typeString.nullable : typeString
     }
     
     func recursiveModelInputType(unmodified: Bool) -> String {
@@ -1515,7 +1545,7 @@ fileprivate extension Describeable {
 //
 fileprivate extension __Schema.__Argument {
     
-    func methodParameter(useDefaultValues: Bool) -> Swift.Method.Parameter {
+    func methodParameter(useDefaultValues: Bool, valueType: Bool) -> Swift.Method.Parameter {
         
         let nullable = self.type.isTopLevelNullable
         
@@ -1524,8 +1554,9 @@ fileprivate extension __Schema.__Argument {
             defaultValue = .nil
         }
         
-        let typeString = self.type.recursiveQueryType(unmodified: self.type.hasScalar, ignoreNull: true)
-        
+        let type = self.type.recursiveQueryType(unmodified: self.type.hasScalar, ignoreNull: true)
+        let typeString = valueType ? "GraphQLValue<\(type)>" : type
+
         return Swift.Method.Parameter(
             name:    self.name,
             type:    nullable ? typeString.nullable : typeString,
@@ -1560,9 +1591,9 @@ fileprivate extension __Schema.__Field {
         return comments
     }
     
-    func parameters(isInterface: Bool) -> [Swift.Method.Parameter] {
+    func parameters(isInterface: Bool, valueType: Bool) -> [Swift.Method.Parameter] {
         return self.arguments.map {
-            $0.methodParameter(useDefaultValues: !isInterface)
+            $0.methodParameter(useDefaultValues: !isInterface, valueType: valueType)
         }
     }
 }
