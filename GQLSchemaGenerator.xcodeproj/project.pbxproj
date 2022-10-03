@@ -146,12 +146,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15FB3EEB28DA308200DD72C0 /* Gen$aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gen$aliases.swift; path = Generated/Gen$aliases.swift; sourceTree = "<group>"; };
-		15FB3EEC28DA308300DD72C0 /* Gen$enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gen$enums.swift; path = Generated/Gen$enums.swift; sourceTree = "<group>"; };
-		15FB3EED28DA308300DD72C0 /* Gen$queries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gen$queries.swift; path = Generated/Gen$queries.swift; sourceTree = "<group>"; };
-		15FB3EEE28DA308300DD72C0 /* Gen$rootQueries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gen$rootQueries.swift; path = Generated/Gen$rootQueries.swift; sourceTree = "<group>"; };
-		15FB3EEF28DA308300DD72C0 /* Gen$fragments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gen$fragments.swift; path = Generated/Gen$fragments.swift; sourceTree = "<group>"; };
-		15FB3EF028DA308300DD72C0 /* Gen$inputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gen$inputs.swift; path = Generated/Gen$inputs.swift; sourceTree = "<group>"; };
+		15FB3EEB28DA308200DD72C0 /* Gen$aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gen$aliases.swift; sourceTree = "<group>"; };
+		15FB3EEC28DA308300DD72C0 /* Gen$enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gen$enums.swift; sourceTree = "<group>"; };
+		15FB3EED28DA308300DD72C0 /* Gen$queries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gen$queries.swift; sourceTree = "<group>"; };
+		15FB3EEE28DA308300DD72C0 /* Gen$rootQueries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gen$rootQueries.swift; sourceTree = "<group>"; };
+		15FB3EEF28DA308300DD72C0 /* Gen$fragments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gen$fragments.swift; sourceTree = "<group>"; };
+		15FB3EF028DA308300DD72C0 /* Gen$inputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gen$inputs.swift; sourceTree = "<group>"; };
 		OBJ_100 /* GraphQLField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLField.swift; sourceTree = "<group>"; };
 		OBJ_101 /* GraphQLFragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLFragment.swift; sourceTree = "<group>"; };
 		OBJ_102 /* GraphQLInlineFragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLInlineFragment.swift; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 			path = Introspection;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -396,7 +396,6 @@
 				OBJ_125 /* README.md */,
 				OBJ_126 /* GQLSchemaGenerator.podspec */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_50 /* Tests */ = {
@@ -415,12 +414,6 @@
 				OBJ_65 /* Configuration */,
 				OBJ_67 /* Extensions */,
 				OBJ_70 /* Generated */,
-				15FB3EEB28DA308200DD72C0 /* Gen$aliases.swift */,
-				15FB3EEC28DA308300DD72C0 /* Gen$enums.swift */,
-				15FB3EEF28DA308300DD72C0 /* Gen$fragments.swift */,
-				15FB3EF028DA308300DD72C0 /* Gen$inputs.swift */,
-				15FB3EED28DA308300DD72C0 /* Gen$queries.swift */,
-				15FB3EEE28DA308300DD72C0 /* Gen$rootQueries.swift */,
 				OBJ_77 /* Generator tests */,
 				OBJ_81 /* GeneratorTests.swift */,
 				OBJ_82 /* Schema */,
@@ -479,6 +472,12 @@
 		OBJ_70 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				15FB3EEB28DA308200DD72C0 /* Gen$aliases.swift */,
+				15FB3EEC28DA308300DD72C0 /* Gen$enums.swift */,
+				15FB3EEF28DA308300DD72C0 /* Gen$fragments.swift */,
+				15FB3EF028DA308300DD72C0 /* Gen$inputs.swift */,
+				15FB3EED28DA308300DD72C0 /* Gen$queries.swift */,
+				15FB3EEE28DA308300DD72C0 /* Gen$rootQueries.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -688,7 +687,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_117 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
