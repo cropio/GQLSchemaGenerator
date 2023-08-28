@@ -531,7 +531,13 @@ extension Swift {
 
                 var legacyInitBody: [Line] = []
                 for field in fields {
-                    legacyInitBody += Line(content: "self.\(field.name) = \(field.name).map { .value($0) }")
+                    var line = "self.\(field.name) = "
+                    if field.type.isTopLevelNullable {
+                        line += "\(field.name).map { .value($0) }"
+                    } else {
+                        line += ".value(\(field.name))"
+                    }
+                    legacyInitBody += Line(content: line)
                 }
 
                 swiftClass += Method(
